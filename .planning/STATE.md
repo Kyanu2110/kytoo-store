@@ -10,14 +10,14 @@ See: .planning/PROJECT.md (updated 2026-05-17)
 ## Status
 
 **Overall:** 0/6 phases complete
-**Current phase:** Phase 1 (Pending — not yet planned)
-**Last activity:** 2026-05-17 — Project initialized
+**Current phase:** Phase 1 (Context gathered — ready to plan)
+**Last activity:** 2026-05-17 — Phase 1 context gathered via /gsd:discuss-phase
 
 ## Phase Progress
 
 | Phase | Name | Status | Plans |
 |-------|------|--------|-------|
-| 1 | Sản phẩm thật + Shopee Links | Pending | 0 |
+| 1 | Sản phẩm thật + Shopee Links | Context gathered | 0 |
 | 2 | Form liên hệ thật | Pending | 0 |
 | 3 | Google Analytics | Pending | 0 |
 | 4 | SEO + Open Graph | Pending | 0 |
