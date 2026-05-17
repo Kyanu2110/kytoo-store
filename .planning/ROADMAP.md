@@ -14,12 +14,25 @@
 
 **Requirements:** PROD-01, PROD-02
 
+**Plans:** 2 plans in 2 waves
+
+**Wave 1**
+- [ ] `01-01` — Collect product data + replace all placeholders with real products across 3 sections
+
+**Wave 2** *(blocked on Wave 1 completion)*
+- [ ] `01-02` — Audit remaining Shopee link gaps + final browser sign-off
+
+**Cross-cutting constraints:**
+- All href values on Shopee CTAs: hardcoded `https://shopee.vn/...` string literals only
+- All product `<img>` tags: `onerror` gradient fallback (exact literal per D-12)
+- Only `index.html` modified (+ `images/.gitkeep`)
+
 **Success Criteria:**
 1. Tất cả sản phẩm trong featured carousel, agent tabs, và collection slider có ảnh thật (hoặc đúng slot để user thêm ảnh)
 2. Tất cả nút "Mua ngay" / "Xem trên Shopee" có link thật đến Shopee listing (hoặc shop page nếu chưa có listing riêng)
 3. Tên và giá sản phẩm khớp với Shopee
 
-**Status:** Pending
+**Status:** Planned
 
 ---
 
