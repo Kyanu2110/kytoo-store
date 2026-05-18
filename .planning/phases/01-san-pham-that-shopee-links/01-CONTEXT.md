@@ -26,8 +26,9 @@ Thay thế toàn bộ placeholder (gradient, chữ cái, href="#") trong `index.
 
 ### Danh sách sản phẩm
 - **D-04:** 5 sản phẩm placeholder hiện tại (Jett Hoodie, Reyna Keycap, Sage Art Print, Neon Mug, Killjoy Mousepad) phải được thay hoàn toàn — đây KHÔNG phải sản phẩm thật KYTOO.
-- **D-05:** Tổng số sản phẩm thật: 6–10. UI cần mở rộng để chứa thêm slot (hiện có 5).
+- **D-05:** Tổng số sản phẩm thật: **15**. UI cần mở rộng để chứa thêm slot (hiện có 5 trong agent tabs, cần thêm section mới cho catalog đầy đủ).
 - **D-06:** Tên, giá, danh mục, và ảnh của từng sản phẩm thật sẽ do user cung cấp khi execute (paste vào chat). Planner cần chuẩn bị cấu trúc linh hoạt để nhận input này.
+- **D-13:** Agent Gear tabs (`#featured`) giữ vai trò **spotlight** cho 5–8 sản phẩm nổi bật — không phải catalog đầy đủ. Toàn bộ 15 sản phẩm được hiển thị trong section grid mới `#all-products` (sau `#collection`, trước `#guides`) dạng lưới 3–4 cột. Mỗi card trong grid gồm: ảnh, tên, danh mục, giá, nút "Mua trên Shopee".
 
 ### Shopee Links
 - **D-07:** Shop KYTOO đã mở và có listing riêng cho từng sản phẩm.
@@ -40,7 +41,7 @@ Thay thế toàn bộ placeholder (gradient, chữ cái, href="#") trong `index.
 - **D-12:** Fallback cho tương lai (thêm sản phẩm mới): giữ CSS gradient Valorant làm fallback — không ẩn sản phẩm. Implement bằng `onerror` trên `<img>` tag.
 
 ### Claude's Discretion
-- Cách expand UI để chứa 6–10 sản phẩm (thêm slide vào carousel, thêm tab agent, hoặc section grid mới) — Claude chọn cách phù hợp nhất với codebase hiện tại.
+- Thứ tự sản phẩm trong Agent Gear tabs (5–8 featured) so với grid đầy đủ 15 — Claude chọn theo danh mục hoặc thứ tự user cung cấp.
 
 </decisions>
 
@@ -59,8 +60,9 @@ Thay thế toàn bộ placeholder (gradient, chữ cái, href="#") trong `index.
 ### Implementation Target
 - `index.html` — file duy nhất cần sửa (1542 dòng). Các section liên quan:
   - `#new-products` (dòng 333–574): 3 thumb cards + featured carousel
-  - `#featured` / agent tabs (dòng 689–800): 5 agent tabs với product info
+  - `#featured` / agent tabs (dòng 689–800): 5–8 agent tabs spotlight
   - `#collection` (dòng 801–959): collection slider
+  - `#all-products` (section mới, thêm sau dòng ~959): grid 3–4 cột, 15 sản phẩm
   - 7 SHOPEE LINK comment slots (①–⑦) đánh dấu sẵn trong code
 
 </canonical_refs>

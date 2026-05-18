@@ -28,7 +28,7 @@
 - Only `index.html` modified (+ `images/.gitkeep`)
 
 **Success Criteria:**
-1. Tất cả sản phẩm trong featured carousel, agent tabs, và collection slider có ảnh thật (hoặc đúng slot để user thêm ảnh)
+1. Đủ 15 sản phẩm thật hiển thị trên trang — section #all-products (grid catalog mới) hiển thị cả 15; featured carousel, agent tabs spotlight (5–8 SP nổi bật), và collection slider đều có ảnh thật (hoặc đúng slot để thêm ảnh)
 2. Tất cả nút "Mua ngay" / "Xem trên Shopee" có link thật đến Shopee listing (hoặc shop page nếu chưa có listing riêng)
 3. Tên và giá sản phẩm khớp với Shopee
 
