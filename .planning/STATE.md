@@ -15,17 +15,19 @@ See: .planning/PROJECT.md (updated 2026-05-22)
 
 | Phase | Name | Status |
 |-------|------|--------|
-| 1 | Core Layout & Hero | Not started |
+| 1 | Core Layout & Hero | Ready to execute |
 | 2 | Products, About & Contact | Not started |
 | 3 | Deploy & Verify | Not started |
 
 ## Current Phase
 
-**Phase 1: Core Layout & Hero**
+**Phase 1: Core Layout & Hero** — 2 plans, 2 waves
 
 Plans:
-- [ ] 01-01: HTML skeleton, Tailwind setup, navbar, color scheme
-- [ ] 01-02: Hero section — ảnh nền, overlay, logo, tagline, CTA
+- [ ] 01-01 (Wave 1): HTML skeleton, Tailwind CDN, custom tokens, navbar, sections, footer
+- [ ] 01-02 (Wave 2, depends 01-01): Hero section — VALORANT bg, gradient overlay, Rajdhani heading, CTA
+
+Last Activity: 2026-05-22 — Planning complete
 
 ## Notes
 
