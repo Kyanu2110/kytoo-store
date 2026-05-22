@@ -25,8 +25,8 @@
 **Plans:** 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — HTML skeleton: Tailwind CDN, custom color tokens, Google Fonts, fixed navbar with symmetric layout + mobile hamburger, 4 section placeholders, footer
-- [ ] 01-02-PLAN.md — Hero section: VALORANT_Jett_Red_1_1.webp fullscreen background, gradient overlay, Rajdhani Bold "KYTOO" heading, tagline, smooth-scroll CTA button
+- [x] 01-01-PLAN.md — HTML skeleton: Tailwind CDN, custom color tokens, Google Fonts, fixed navbar with symmetric layout + mobile hamburger, 4 section placeholders, footer
+- [x] 01-02-PLAN.md — Hero section: VALORANT_Jett_Red_1_1.webp fullscreen background, gradient overlay, Rajdhani Bold "KYTOO" heading, tagline, smooth-scroll CTA button
 
 **Success Criteria:**
 1. Mở `index.html` trong browser thấy hero fullscreen với ảnh Valorant và overlay tối
