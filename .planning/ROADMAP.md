@@ -53,8 +53,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Product grid: 12 article cards (2→4 col responsive), onclick modal, PRODUCTS JS object, openModal/closeModal/Escape listener, modal element inserted before </body>
-- [ ] 02-02-PLAN.md — Gallery + About + Contact + Footer: col-span-2 gallery grid, brand copy + 1.000+ / 4.8★ stats, Zalo/FB contact cards, footer social icons + 2025 copyright
+- [x] 02-01-PLAN.md — Product grid: 12 article cards (2→4 col responsive), onclick modal, PRODUCTS JS object, openModal/closeModal/Escape listener, modal element inserted before </body>
+- [x] 02-02-PLAN.md — Gallery + About + Contact + Footer: col-span-2 gallery grid, brand copy + 1.000+ / 4.8★ stats, Zalo/FB contact cards, footer social icons + 2025 copyright
 
 **Success Criteria:**
 1. Grid sản phẩm hiển thị đầy đủ 12 ảnh + tên + giá, responsive grid (2 cột mobile, 4 cột desktop)
