@@ -22,9 +22,11 @@
 - TECH-01: Responsive mobile-first
 - TECH-02: Single-file index.html + Tailwind CDN + Vanilla JS
 
-**Plans:**
-1. `01-01` — HTML skeleton: setup Tailwind CDN, navbar, section placeholders, color scheme Valorant (đỏ/đen/trắng)
-2. `01-02` — Hero section: ảnh nền fullscreen, overlay, logo, tagline, CTA button
+**Plans:** 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — HTML skeleton: Tailwind CDN, custom color tokens, Google Fonts, fixed navbar with symmetric layout + mobile hamburger, 4 section placeholders, footer
+- [ ] 01-02-PLAN.md — Hero section: VALORANT_Jett_Red_1_1.webp fullscreen background, gradient overlay, Rajdhani Bold "KYTOO" heading, tagline, smooth-scroll CTA button
 
 **Success Criteria:**
 1. Mở `index.html` trong browser thấy hero fullscreen với ảnh Valorant và overlay tối
