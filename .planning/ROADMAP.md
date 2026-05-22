@@ -1,138 +1,78 @@
-# KYTOO.GG — Roadmap v1
+# ROADMAP — KYTOO.GG v1
 
-**Project:** KYTOO.GG Valorant Merch Store VN
-**Milestone:** v1 Launch — biến landing page thành store hoạt động thật sự
+**3 phases** | **14 requirements mapped** | All v1 requirements covered ✓
+
+| # | Phase | Goal | Requirements | Plans |
+|---|-------|------|--------------|-------|
+| 1 | Core Layout & Hero | Landing page có cấu trúc HTML hoàn chỉnh, hero section đẹp | HERO-01–04, TECH-01–02 | 2 |
+| 2 | Products, About & Contact | Toàn bộ content sections với ảnh thật và Shopee links | PROD-01–03, ABOUT-01–03, CONTACT-01 | 2 |
+| 3 | Deploy & Verify | Site live trên URL công khai, mọi Shopee link hoạt động | TECH-03 | 1 |
 
 ---
 
-## Phases
+### Phase 1: Core Layout & Hero
 
-### Phase 1: Sản phẩm thật + Shopee Links
+**Goal:** Build skeleton HTML + hero section — mở file trong browser thấy ngay landing page có hồn, responsive trên mobile.
 
-**Goal:** Người dùng có thể xem hình ảnh thật của sản phẩm và click mua ngay trên Shopee
-**Mode:** mvp
+**Requirements:**
+- HERO-01: Ảnh nền Valorant fullscreen với overlay
+- HERO-02: Logo + tên KYTOO.GG trên hero
+- HERO-03: Tagline ngắn
+- HERO-04: Nút CTA → Shopee
+- TECH-01: Responsive mobile-first
+- TECH-02: Single-file index.html + Tailwind CDN + Vanilla JS
 
-**Requirements:** PROD-01, PROD-02
-
-**Plans:** 2 plans in 2 waves
-
-**Wave 1**
-- [ ] `01-01` — Collect product data + replace all placeholders with real products across 3 sections
-
-**Wave 2** *(blocked on Wave 1 completion)*
-- [ ] `01-02` — Audit remaining Shopee link gaps + final browser sign-off
-
-**Cross-cutting constraints:**
-- All href values on Shopee CTAs: hardcoded `https://shopee.vn/...` string literals only
-- All product `<img>` tags: `onerror` gradient fallback (exact literal per D-12)
-- Only `index.html` modified (+ `images/.gitkeep`)
+**Plans:**
+1. `01-01` — HTML skeleton: setup Tailwind CDN, navbar, section placeholders, color scheme Valorant (đỏ/đen/trắng)
+2. `01-02` — Hero section: ảnh nền fullscreen, overlay, logo, tagline, CTA button
 
 **Success Criteria:**
-1. Đủ 15 sản phẩm thật hiển thị trên trang — section #all-products (grid catalog mới) hiển thị cả 15; featured carousel, agent tabs spotlight (5–8 SP nổi bật), và collection slider đều có ảnh thật (hoặc đúng slot để thêm ảnh)
-2. Tất cả nút "Mua ngay" / "Xem trên Shopee" có link thật đến Shopee listing (hoặc shop page nếu chưa có listing riêng)
-3. Tên và giá sản phẩm khớp với Shopee
-
-**Status:** Planned
+1. Mở `index.html` trong browser thấy hero fullscreen với ảnh Valorant và overlay tối
+2. Logo KYTOO.GG và tagline hiển thị rõ ràng, đọc được
+3. Nút CTA "Mua ngay" render đúng vị trí và màu sắc
+4. Navbar sticky hiển thị logo và navigation links
+5. Layout không vỡ trên 320px (mobile nhỏ nhất)
 
 ---
 
-### Phase 2: Form liên hệ thật
+### Phase 2: Products, About & Contact
 
-**Goal:** Người dùng submit form → KYTOO nhận được email
-**Mode:** mvp
+**Goal:** Điền đầy đủ content: grid sản phẩm với ảnh thật, modal popup, about section thuyết phục, contact links — trang hoàn chỉnh để review.
 
-**Requirements:** CONTACT-01
+**Requirements:**
+- PROD-01: Grid card hiển thị ảnh, tên, giá
+- PROD-02: Nút "Mua trên Shopee" riêng từng sản phẩm
+- PROD-03: Modal/popup chi tiết khi click
+- ABOUT-01: Mô tả thương hiệu KYTOO.GG
+- ABOUT-02: UVP — lý do chọn KYTOO
+- ABOUT-03: Số liệu uy tín
+- CONTACT-01: Icon/link Zalo & Facebook
+
+**Plans:**
+1. `02-01` — Product section: grid card 12 sản phẩm, modal popup, Shopee links placeholder
+2. `02-02` — About & Contact sections: UVP copy, social proof numbers, Zalo/FB links, footer
 
 **Success Criteria:**
-1. Form tích hợp Formspree (hoặc EmailJS) — submit gửi email đến địa chỉ cấu hình
-2. Hiển thị success message khi gửi thành công
-3. Hiển thị error message khi gửi thất bại
-4. Không cần backend — pure frontend integration
-
-**Status:** Pending
+1. Grid sản phẩm hiển thị đầy đủ 12 ảnh + tên + giá, responsive grid (1 cột mobile, 3-4 cột desktop)
+2. Click vào card sản phẩm → modal popup mở ra với ảnh lớn + mô tả
+3. Click nút "Mua trên Shopee" → mở tab mới đến link Shopee (placeholder link đúng format)
+4. About section có UVP + số liệu uy tín hiển thị rõ
+5. Icon Zalo và Facebook trong footer, click mở đúng app/link
 
 ---
 
-### Phase 3: Google Analytics
+### Phase 3: Deploy & Verify
 
-**Goal:** Team có data về traffic và hành vi người dùng
-**Mode:** mvp
+**Goal:** Site live trên URL công khai, tất cả Shopee links được điền đúng và hoạt động, mobile check thực tế.
 
-**Requirements:** TRACK-01
+**Requirements:**
+- TECH-03: Deploy tĩnh — GitHub Pages / Netlify
+
+**Plans:**
+1. `03-01` — Deploy + điền Shopee links thật + final QA
 
 **Success Criteria:**
-1. GA4 tracking code được gắn đúng cách trong `<head>`
-2. Pageview được track tự động
-3. Click vào các CTA "Shopee" được track là events
-4. Không ảnh hưởng đến performance (async loading)
-
-**Status:** Pending
-
----
-
-### Phase 4: SEO + Open Graph
-
-**Goal:** Site hiển thị đẹp khi share và có thể được Google index
-**Mode:** mvp
-
-**Requirements:** SEO-01
-
-**Success Criteria:**
-1. `<title>` và `<meta name="description">` được điền đúng và unique
-2. Open Graph tags đầy đủ: `og:title`, `og:description`, `og:image`, `og:url`, `og:type`
-3. Twitter Card meta tags
-4. `og:image` là ảnh thật (không phải placeholder), kích thước 1200×630px
-5. Kiểm tra được qua Facebook Sharing Debugger hoặc opengraph.io
-
-**Status:** Pending
-
----
-
-### Phase 5: Performance — Lazy Loading
-
-**Goal:** Trang tải nhanh hơn — chỉ load ảnh khi cần
-**Mode:** mvp
-
-**Requirements:** PERF-01
-
-**Success Criteria:**
-1. Tất cả `<img>` tags có `loading="lazy"` attribute
-2. Above-the-fold images (hero) giữ `loading="eager"` hoặc không set (không lazy)
-3. LCP (Largest Contentful Paint) không bị tăng so với baseline
-4. Có thể test bằng Chrome DevTools Network throttling
-
-**Status:** Pending
-
----
-
-### Phase 6: Deploy Ready
-
-**Goal:** Site sẵn sàng deploy lên static hosting và có favicon
-**Mode:** mvp
-
-**Requirements:** DEPLOY-01
-
-**Success Criteria:**
-1. Favicon.ico và favicon.png (32×32, 180×180) tồn tại trong root
-2. `<link rel="icon">` và `<link rel="apple-touch-icon">` được gắn đúng trong `<head>`
-3. `netlify.toml` hoặc `vercel.json` cơ bản được tạo (hoặc README hướng dẫn deploy GitHub Pages)
-4. `.gitignore` phù hợp
-5. Git có ít nhất 1 commit với toàn bộ code
-
-**Status:** Pending
-
----
-
-## Coverage
-
-| REQ-ID | Phase | Description |
-|--------|-------|-------------|
-| PROD-01 | Phase 1 | Hình ảnh thật cho sản phẩm |
-| PROD-02 | Phase 1 | Link Shopee cho tất cả CTA |
-| CONTACT-01 | Phase 2 | Form liên hệ gửi email thật |
-| TRACK-01 | Phase 3 | Google Analytics 4 |
-| SEO-01 | Phase 4 | Meta tags + Open Graph |
-| PERF-01 | Phase 5 | Lazy loading hình ảnh |
-| DEPLOY-01 | Phase 6 | Favicon + deploy config |
-
-**6 phases | 7 requirements | 100% v1 requirements covered ✓**
+1. Site live trên URL công khai (GitHub Pages hoặc Netlify)
+2. Tất cả nút "Mua trên Shopee" dẫn đến đúng listing Shopee tương ứng
+3. Test trên Chrome mobile thực tế — không có layout bug nào
+4. Tất cả ảnh load được từ URL public (không bị broken image)
