@@ -16,18 +16,18 @@ See: .planning/PROJECT.md (updated 2026-05-22)
 | Phase | Name | Status |
 |-------|------|--------|
 | 1 | Core Layout & Hero | Complete ✓ |
-| 2 | Products, About & Contact | Not started |
+| 2 | Products, About & Contact | Ready to execute |
 | 3 | Deploy & Verify | Not started |
 
 ## Current Phase
 
-**Phase 1: Core Layout & Hero** — 2 plans, 2 waves ✓ COMPLETE
+**Phase 2: Products, About & Contact** — 2 plans, 2 waves ◆ PLANNED
 
 Plans:
-- [x] 01-01 (Wave 1): HTML skeleton, Tailwind CDN, custom tokens, navbar, sections, footer
-- [x] 01-02 (Wave 2, depends 01-01): Hero section — VALORANT bg, gradient overlay, Rajdhani heading, CTA
+- [ ] 02-01 (Wave 1): Product grid (12 cards) + Vanilla JS modal
+- [ ] 02-02 (Wave 2, depends 02-01): Gallery + About + Contact + Footer social links
 
-Last Activity: 2026-05-22 — Phase 1 execution complete
+Last Activity: 2026-05-23 — Phase 2 planning complete
 
 ## Notes
 
