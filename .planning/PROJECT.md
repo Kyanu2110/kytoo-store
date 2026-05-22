@@ -1,70 +1,55 @@
-# KYTOO.GG — Valorant Merch Store VN
+# KYTOO.GG
 
 ## What This Is
 
-KYTOO.GG là shop bán đồ lưu niệm Valorant chính hãng tại Việt Nam — quần áo, phụ kiện gaming, collectibles theo nhân vật. Landing page đã hoàn chỉnh với design Valorant tactical aesthetic. Bước tiếp theo là biến landing page thành một store hoạt động thật sự: hình ảnh sản phẩm thật, link mua hàng qua Shopee, form liên hệ hoạt động, và SEO cơ bản.
+Landing page merch Valorant tại Việt Nam — giới thiệu sản phẩm vật lý (keycap, phụ kiện, đồ lưu niệm Valorant), kết nối khách hàng đến shop Shopee của KYTOO.GG. Không tự xây cart — Shopee là kênh bán duy nhất.
 
 ## Core Value
 
-Người xem landing page phải có thể tìm và mua sản phẩm ngay — click vào sản phẩm là ra trang Shopee mua được.
+Khách truy cập web → thấy sản phẩm đẹp → click link Shopee → mua được hàng.
 
 ## Requirements
 
 ### Validated
 
-- ✓ Landing page UI hoàn chỉnh — Hero, Products, About, Agent Gear tabs, Collection, Gallery, Contact — existing
-- ✓ Responsive design (desktop + mobile) — existing
-- ✓ Valorant tactical aesthetic (clip-path, colors, typography) — existing
-- ✓ JavaScript interactions (carousels, agent tabs, scroll-to-top, mobile nav) — existing
+(None yet — ship to validate)
 
 ### Active
 
-- [ ] Hình ảnh sản phẩm thật thay placeholder/gradient
-- [ ] Link Shopee thật gắn vào tất cả nút "Mua ngay" / "Xem trên Shopee"
-- [ ] Form liên hệ gửi email thật (Formspree hoặc EmailJS)
-- [ ] SEO cơ bản: meta tags, Open Graph, favicon
-- [ ] Google Analytics / tracking cơ bản
-- [ ] Tốc độ tải trang (optimize images, lazy loading)
-- [ ] Trang 404 và error states
+- [ ] Hero section với ảnh nền Valorant, tagline, CTA chính
+- [ ] Grid sản phẩm nổi bật: ảnh, tên, giá, nút "Mua trên Shopee"
+- [ ] About section giới thiệu thương hiệu KYTOO.GG
+- [ ] Form liên hệ (Formspree hoặc tương tự)
+- [ ] Deploy được, Shopee link hoạt động
+- [ ] Responsive mobile-first
 
 ### Out of Scope
 
-- Giỏ hàng riêng — dùng Shopee làm kênh bán hàng, không tự làm cart
-- Backend/database riêng — static site, không cần server
-- Hệ thống tài khoản user — không cần auth cho v1
-- Blog/CMS — không trong scope đầu
+- Giỏ hàng / thanh toán trực tiếp — dùng Shopee thay thế
+- User account / login — không cần cho v1
+- CMS / admin panel — cập nhật thủ công HTML
+- Build system / bundler — giữ single-file để dễ deploy
 
 ## Context
 
-**Tech stack hiện tại:** Single-file HTML (1542 dòng), Tailwind CSS CDN, Lucide icons, Google Fonts (Rajdhani + Inter), Vanilla JS thuần. Không có build system, không có framework.
-
-**Kênh bán hàng:** Shopee — landing page dùng làm showcase + drive traffic đến Shopee shop. Nhiều CTA "Xem trên Shopee" đã có trong UI nhưng chưa có link thật.
-
-**Sản phẩm hiện có trong UI (placeholder):**
-- Jett Windslash Hoodie — 350.000₫
-- Reyna Devour Keycap Series — 280.000₫
-- Sage Healing Art Print — 120.000₫
-- Neon Sprint Mug — 150.000₫
-- Killjoy Lab Mousepad — 420.000₫
-
-**File duy nhất:** `index.html` + 1 ảnh `bef937a7b661a05103b38a4e57ffb195.jpg`
-
-**Git:** Initialized, chưa có commit nào.
+- Đã có bộ ảnh sản phẩm tại `images/`: mysterybox, blindbox, keycap14phim, keycapcustom, padchuot, wingman, tactical, nuochoa, nhanclove, nhandaychuyen, miengketay, meotreomanhinh
+- Ảnh hero Valorant: `VALORANT_Jett_Red_1_1.webp` (root folder)
+- Dự án trước đã xây xong index.html nhưng bị xóa — rebuild từ đầu với cấu trúc GSD rõ ràng hơn
 
 ## Constraints
 
-- **Tech stack**: Giữ nguyên static HTML — không thêm build system hay framework phức tạp
-- **Kênh bán**: Shopee là kênh duy nhất — không tự build checkout
-- **Hosting**: Phù hợp với static hosting (GitHub Pages, Netlify, Vercel)
-- **Timeline**: Ưu tiên ship nhanh — hoàn thiện cái đang có trước khi thêm feature mới
+- **Tech stack**: Single-file HTML + Tailwind CSS CDN + Vanilla JS — không build step, không framework
+- **Deploy**: File tĩnh, có thể host trên GitHub Pages / Netlify / bất kỳ static host
+- **Nội dung**: Tiếng Việt, thị trường Việt Nam
+- **Bán hàng**: Shopee là kênh duy nhất — không tự build payment
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Dùng Shopee làm kênh bán | Không cần tự build payment, trust sẵn có | — Pending |
-| Giữ single-file HTML | Đơn giản, deploy dễ, không cần server | — Pending |
-| Formspree/EmailJS cho form | Static site cần third-party form service | — Pending |
+| Single-file HTML | Dễ deploy, không cần build pipeline, dễ maintain | — Pending |
+| Shopee thay vì tự build cart | Giảm complexity, tận dụng hạ tầng Shopee sẵn có | — Pending |
+| Tailwind CDN | Không cần npm, phù hợp single-file approach | — Pending |
 
 ## Evolution
 
@@ -84,4 +69,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-17 after initialization*
+*Last updated: 2026-05-22 after initialization*
