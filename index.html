@@ -35,5 +35,65 @@
 </head>
 <body class="bg-kytoo-bg text-kytoo-cream font-body antialiased">
 
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 h-16 bg-kytoo-bg border-b border-kytoo-border">
+    <div class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between relative">
+      <!-- Left nav links (desktop) -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#san-pham" class="text-kytoo-cream text-sm uppercase tracking-widest hover:text-kytoo-red transition-colors">Sản phẩm</a>
+        <a href="#bo-suu-tap" class="text-kytoo-cream text-sm uppercase tracking-widest hover:text-kytoo-red transition-colors">Bộ sưu tập</a>
+      </div>
+      <!-- Center logo -->
+      <div class="absolute left-1/2 -translate-x-1/2">
+        <span class="font-display font-bold text-xl tracking-widest text-kytoo-cream uppercase">KYTOO</span>
+      </div>
+      <!-- Right nav links + CTA (desktop) -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#ve-kytoo" class="text-kytoo-cream text-sm uppercase tracking-widest hover:text-kytoo-red transition-colors">Về KYTOO</a>
+        <a href="#lien-he" class="text-kytoo-cream text-sm uppercase tracking-widest hover:text-kytoo-red transition-colors">Liên hệ</a>
+        <a href="#shopee-placeholder" class="bg-kytoo-red text-white uppercase tracking-widest px-6 py-2 text-sm font-semibold hover:bg-kytoo-red-dark transition-colors">Mua ngay</a>
+      </div>
+      <!-- Hamburger (mobile) -->
+      <button id="hamburger-btn" class="md:hidden text-kytoo-cream p-2" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile drawer -->
+    <div id="mobile-menu" class="md:hidden hidden bg-kytoo-bg border-b border-kytoo-border">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-4">
+        <a href="#san-pham" class="text-kytoo-cream text-sm uppercase tracking-widest hover:text-kytoo-red transition-colors">Sản phẩm</a>
+        <a href="#bo-suu-tap" class="text-kytoo-cream text-sm uppercase tracking-widest hover:text-kytoo-red transition-colors">Bộ sưu tập</a>
+        <a href="#ve-kytoo" class="text-kytoo-cream text-sm uppercase tracking-widest hover:text-kytoo-red transition-colors">Về KYTOO</a>
+        <a href="#lien-he" class="text-kytoo-cream text-sm uppercase tracking-widest hover:text-kytoo-red transition-colors">Liên hệ</a>
+        <a href="#shopee-placeholder" class="bg-kytoo-red text-white uppercase tracking-widest px-6 py-2 text-sm font-semibold hover:bg-kytoo-red-dark transition-colors inline-block text-center">Mua ngay</a>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburgerBtn.addEventListener('click', function() {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    document.addEventListener('click', function(e) {
+      const nav = document.querySelector('nav');
+      if (!nav.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  </script>
 </body>
 </html>
