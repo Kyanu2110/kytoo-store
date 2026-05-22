@@ -50,16 +50,18 @@ Plans:
 - ABOUT-03: Số liệu uy tín
 - CONTACT-01: Icon/link Zalo & Facebook
 
-**Plans:**
-1. `02-01` — Product section: grid card 12 sản phẩm, modal popup, Shopee links placeholder
-2. `02-02` — About & Contact sections: UVP copy, social proof numbers, Zalo/FB links, footer
+**Plans:** 2 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Product grid: 12 article cards (2→4 col responsive), onclick modal, PRODUCTS JS object, openModal/closeModal/Escape listener, modal element inserted before </body>
+- [ ] 02-02-PLAN.md — Gallery + About + Contact + Footer: col-span-2 gallery grid, brand copy + 1.000+ / 4.8★ stats, Zalo/FB contact cards, footer social icons + 2025 copyright
 
 **Success Criteria:**
-1. Grid sản phẩm hiển thị đầy đủ 12 ảnh + tên + giá, responsive grid (1 cột mobile, 3-4 cột desktop)
+1. Grid sản phẩm hiển thị đầy đủ 12 ảnh + tên + giá, responsive grid (2 cột mobile, 4 cột desktop)
 2. Click vào card sản phẩm → modal popup mở ra với ảnh lớn + mô tả
 3. Click nút "Mua trên Shopee" → mở tab mới đến link Shopee (placeholder link đúng format)
 4. About section có UVP + số liệu uy tín hiển thị rõ
-5. Icon Zalo và Facebook trong footer, click mở đúng app/link
+5. Icon Zalo và Facebook trong contact section và footer, click hoạt động
 
 ---
 
