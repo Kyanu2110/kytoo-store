@@ -27,7 +27,7 @@ Plans:
 - [x] 02-01 (Wave 1): Product grid (12 cards) + Vanilla JS modal
 - [x] 02-02 (Wave 2): Gallery + About + Contact + Footer social links
 
-Last Activity: 2026-05-24 — Thêm ảnh chi tiết carousel + scroll reveal animation
+Last Activity: 2026-05-24 — Video hero, heading redesign, contact cards redesign
 
 ## Extra Work (ngoài plan)
 
@@ -38,6 +38,9 @@ Last Activity: 2026-05-24 — Thêm ảnh chi tiết carousel + scroll reveal an
 - [x] Scroll reveal animation — Intersection Observer, fade + slide-up, stagger theo cột
   - Section headings, product cards, gallery, about, contact, footer
   - Tôn trọng `prefers-reduced-motion`
+- [x] Video background hero — `hero.mp4` (1.6MB) loop autoplay, poster fallback ảnh Jett
+- [x] Section headings redesign — thick red bar `w-1 h-10`, text-5xl, số thứ tự `01–04`, full-width separator
+- [x] Contact cards redesign — vertical layout, icon đỏ 32px, hover fill đỏ, font-display
 
 ## Notes
 
