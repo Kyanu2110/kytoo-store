@@ -99,7 +99,12 @@
 
   <!-- Hero Section -->
   <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <img src="VALORANT_Jett_Red_1_1.webp" alt="" class="absolute inset-0 w-full h-full object-cover" style="object-position: center 20%" aria-hidden="true">
+    <video autoplay loop muted playsinline poster="VALORANT_Jett_Red_1_1.webp"
+           class="absolute inset-0 w-full h-full object-cover"
+           style="object-position: center 20%"
+           aria-hidden="true">
+      <source src="hero.mp4" type="video/mp4">
+    </video>
     <div class="absolute inset-0 bg-gradient-to-t from-kytoo-bg via-kytoo-bg/60 to-transparent"></div>
     <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
       <p class="text-kytoo-red text-xs uppercase tracking-widest mb-4 font-body font-semibold">Shop đồ sưu tầm game valorant</p>
@@ -112,9 +117,12 @@
   <!-- Section placeholders -->
   <section id="san-pham" class="py-20 bg-kytoo-bg scroll-mt-navbar">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="flex items-center gap-2 mb-4">
-        <span class="w-8 h-0.5 bg-kytoo-red inline-block"></span>
-        <h2 class="text-3xl font-display font-bold uppercase tracking-widest text-kytoo-cream">Sản Phẩm</h2>
+      <div class="flex items-end justify-between border-b border-kytoo-border pb-5 mb-8">
+        <div class="flex items-center gap-4">
+          <span class="w-1 h-10 bg-kytoo-red flex-shrink-0"></span>
+          <h2 class="text-4xl md:text-5xl font-display font-bold uppercase tracking-widest text-kytoo-cream leading-none">Sản Phẩm</h2>
+        </div>
+        <span class="text-kytoo-red font-display font-bold text-xl tracking-widest hidden md:block">01</span>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer transition-all duration-200 hover:border-kytoo-red hover:scale-105" onclick="openModal('mysterybox')">
@@ -171,9 +179,12 @@
 
   <section id="bo-suu-tap" class="py-20 bg-kytoo-bg-alt scroll-mt-navbar">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="flex items-center gap-2 mb-4">
-        <span class="w-8 h-0.5 bg-kytoo-red inline-block"></span>
-        <h2 class="text-3xl font-display font-bold uppercase tracking-widest text-kytoo-cream">Bộ Sưu Tập</h2>
+      <div class="flex items-end justify-between border-b border-kytoo-border pb-5 mb-8">
+        <div class="flex items-center gap-4">
+          <span class="w-1 h-10 bg-kytoo-red flex-shrink-0"></span>
+          <h2 class="text-4xl md:text-5xl font-display font-bold uppercase tracking-widest text-kytoo-cream leading-none">Bộ Sưu Tập</h2>
+        </div>
+        <span class="text-kytoo-red font-display font-bold text-xl tracking-widest hidden md:block">02</span>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
         <div class="lg:col-span-2 aspect-video overflow-hidden"><img src="images/mysterybox.jpg" alt="" class="w-full h-full object-cover" aria-hidden="true"></div>
@@ -194,9 +205,12 @@
 
   <section id="ve-kytoo" class="py-20 bg-kytoo-bg scroll-mt-navbar">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="flex items-center gap-2 mb-4">
-        <span class="w-8 h-0.5 bg-kytoo-red inline-block"></span>
-        <h2 class="text-3xl font-display font-bold uppercase tracking-widest text-kytoo-cream">Về KYTOO</h2>
+      <div class="flex items-end justify-between border-b border-kytoo-border pb-5 mb-8">
+        <div class="flex items-center gap-4">
+          <span class="w-1 h-10 bg-kytoo-red flex-shrink-0"></span>
+          <h2 class="text-4xl md:text-5xl font-display font-bold uppercase tracking-widest text-kytoo-cream leading-none">Về KYTOO</h2>
+        </div>
+        <span class="text-kytoo-red font-display font-bold text-xl tracking-widest hidden md:block">03</span>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
@@ -219,44 +233,47 @@
 
   <section id="lien-he" class="py-20 bg-kytoo-bg-alt scroll-mt-navbar">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="flex items-center gap-2 mb-4">
-        <span class="w-8 h-0.5 bg-kytoo-red inline-block"></span>
-        <h2 class="text-3xl font-display font-bold uppercase tracking-widest text-kytoo-cream">Liên Hệ</h2>
+      <div class="flex items-end justify-between border-b border-kytoo-border pb-5 mb-8">
+        <div class="flex items-center gap-4">
+          <span class="w-1 h-10 bg-kytoo-red flex-shrink-0"></span>
+          <h2 class="text-4xl md:text-5xl font-display font-bold uppercase tracking-widest text-kytoo-cream leading-none">Liên Hệ</h2>
+        </div>
+        <span class="text-kytoo-red font-display font-bold text-xl tracking-widest hidden md:block">04</span>
       </div>
       <div class="flex flex-wrap gap-4 justify-center">
-        <a href="https://zalo.me/0347470186" target="_blank" rel="noopener" class="flex items-center gap-3 border border-kytoo-border bg-kytoo-bg-alt px-6 py-4 hover:border-kytoo-red transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="7" x2="19" y2="7"/><line x1="19" y1="7" x2="5" y2="17"/><line x1="5" y1="17" x2="19" y2="17"/></svg>
-          <div>
-            <p class="text-kytoo-cream font-semibold text-sm uppercase tracking-widest">Zalo</p>
-            <p class="text-kytoo-gray text-xs">Nhắn tin trực tiếp</p>
+        <a href="https://zalo.me/0347470186" target="_blank" rel="noopener" class="group flex flex-col items-center gap-4 border border-kytoo-border bg-kytoo-bg-alt px-10 py-8 hover:bg-kytoo-red hover:border-kytoo-red transition-colors duration-200 min-w-[130px]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" class="text-kytoo-red group-hover:text-white transition-colors duration-200"><line x1="5" y1="7" x2="19" y2="7"/><line x1="19" y1="7" x2="5" y2="17"/><line x1="5" y1="17" x2="19" y2="17"/></svg>
+          <div class="text-center">
+            <p class="text-kytoo-cream group-hover:text-white font-display font-bold text-sm uppercase tracking-widest transition-colors duration-200">Zalo</p>
+            <p class="text-kytoo-gray group-hover:text-kytoo-cream text-xs mt-1 transition-colors duration-200">Nhắn tin trực tiếp</p>
           </div>
         </a>
-        <a href="https://www.facebook.com/kyanu2110" target="_blank" rel="noopener" class="flex items-center gap-3 border border-kytoo-border bg-kytoo-bg-alt px-6 py-4 hover:border-kytoo-red transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          <div>
-            <p class="text-kytoo-cream font-semibold text-sm uppercase tracking-widest">Facebook</p>
-            <p class="text-kytoo-gray text-xs">Like trang KYTOO</p>
+        <a href="https://www.facebook.com/kyanu2110" target="_blank" rel="noopener" class="group flex flex-col items-center gap-4 border border-kytoo-border bg-kytoo-bg-alt px-10 py-8 hover:bg-kytoo-red hover:border-kytoo-red transition-colors duration-200 min-w-[130px]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="text-kytoo-red group-hover:text-white transition-colors duration-200"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <div class="text-center">
+            <p class="text-kytoo-cream group-hover:text-white font-display font-bold text-sm uppercase tracking-widest transition-colors duration-200">Facebook</p>
+            <p class="text-kytoo-gray group-hover:text-kytoo-cream text-xs mt-1 transition-colors duration-200">Like trang KYTOO</p>
           </div>
         </a>
-        <a href="https://shopee.vn/kytoo_store" target="_blank" rel="noopener" class="flex items-center gap-3 border border-kytoo-border bg-kytoo-bg-alt px-6 py-4 hover:border-kytoo-red transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-          <div>
-            <p class="text-kytoo-cream font-semibold text-sm uppercase tracking-widest">Shopee</p>
-            <p class="text-kytoo-gray text-xs">Shop chính hãng</p>
+        <a href="https://shopee.vn/kytoo_store" target="_blank" rel="noopener" class="group flex flex-col items-center gap-4 border border-kytoo-border bg-kytoo-bg-alt px-10 py-8 hover:bg-kytoo-red hover:border-kytoo-red transition-colors duration-200 min-w-[130px]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" class="text-kytoo-red group-hover:text-white transition-colors duration-200"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <div class="text-center">
+            <p class="text-kytoo-cream group-hover:text-white font-display font-bold text-sm uppercase tracking-widest transition-colors duration-200">Shopee</p>
+            <p class="text-kytoo-gray group-hover:text-kytoo-cream text-xs mt-1 transition-colors duration-200">Shop chính hãng</p>
           </div>
         </a>
-        <a href="https://www.tiktok.com/@kytoo.shop" target="_blank" rel="noopener" class="flex items-center gap-3 border border-kytoo-border bg-kytoo-bg-alt px-6 py-4 hover:border-kytoo-red transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.12 8.12 0 004.85 1.56V6.8a4.85 4.85 0 01-1.08-.11z"/></svg>
-          <div>
-            <p class="text-kytoo-cream font-semibold text-sm uppercase tracking-widest">TikTok</p>
-            <p class="text-kytoo-gray text-xs">@kytoo.shop</p>
+        <a href="https://www.tiktok.com/@kytoo.shop" target="_blank" rel="noopener" class="group flex flex-col items-center gap-4 border border-kytoo-border bg-kytoo-bg-alt px-10 py-8 hover:bg-kytoo-red hover:border-kytoo-red transition-colors duration-200 min-w-[130px]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="text-kytoo-red group-hover:text-white transition-colors duration-200"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.12 8.12 0 004.85 1.56V6.8a4.85 4.85 0 01-1.08-.11z"/></svg>
+          <div class="text-center">
+            <p class="text-kytoo-cream group-hover:text-white font-display font-bold text-sm uppercase tracking-widest transition-colors duration-200">TikTok</p>
+            <p class="text-kytoo-gray group-hover:text-kytoo-cream text-xs mt-1 transition-colors duration-200">@kytoo.shop</p>
           </div>
         </a>
-        <a href="https://www.instagram.com/kytoo_store/" target="_blank" rel="noopener" class="flex items-center gap-3 border border-kytoo-border bg-kytoo-bg-alt px-6 py-4 hover:border-kytoo-red transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          <div>
-            <p class="text-kytoo-cream font-semibold text-sm uppercase tracking-widest">Instagram</p>
-            <p class="text-kytoo-gray text-xs">@kytoo_store</p>
+        <a href="https://www.instagram.com/kytoo_store/" target="_blank" rel="noopener" class="group flex flex-col items-center gap-4 border border-kytoo-border bg-kytoo-bg-alt px-10 py-8 hover:bg-kytoo-red hover:border-kytoo-red transition-colors duration-200 min-w-[130px]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" class="text-kytoo-red group-hover:text-white transition-colors duration-200"><rect x="2" y="2" width="20" height="20"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          <div class="text-center">
+            <p class="text-kytoo-cream group-hover:text-white font-display font-bold text-sm uppercase tracking-widest transition-colors duration-200">Instagram</p>
+            <p class="text-kytoo-gray group-hover:text-kytoo-cream text-xs mt-1 transition-colors duration-200">@kytoo_store</p>
           </div>
         </a>
       </div>
