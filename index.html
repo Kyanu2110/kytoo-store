@@ -43,6 +43,17 @@
     }
     .modal-slide-right { animation: kytoo-slide-right 0.22s ease-out; }
     .modal-slide-left  { animation: kytoo-slide-left  0.22s ease-out; }
+
+    /* Scroll reveal */
+    .kytoo-out {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.55s ease-out, transform 0.55s ease-out !important;
+    }
+    .kytoo-out.kytoo-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body class="bg-kytoo-bg text-kytoo-cream font-body antialiased">
@@ -371,7 +382,7 @@
       nhandaychuyen: {
         name: 'Nhẫn Sage Valorant, Đồ Trang Sức Valorant',
         price: '37.000₫ – 44.100₫',
-        imgs: ['images/nhandaychuyen.png'],
+        imgs: ['images/nhandaychuyen_1.png','images/nhandaychuyen_2.png','images/nhandaychuyen_3.png','images/nhandaychuyen_4.png'],
         desc: 'Nhẫn lấy cảm hứng từ Agent Sage — đơn giản, tinh tế, dành cho người yêu Valorant.',
         shopee: '#shopee-nhandaychuyen'
       },
@@ -463,6 +474,46 @@
         closeModal();
       }
     }
+
+    // Scroll reveal
+    (function() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (!e.isIntersecting) return;
+          e.target.classList.add('kytoo-in');
+          io.unobserve(e.target);
+          // Xoá class sau animation để khôi phục hover transition
+          var d = parseFloat(e.target.style.transitionDelay || '0') * 1000;
+          setTimeout(function() { e.target.classList.remove('kytoo-out'); }, 620 + d);
+        });
+      }, { threshold: 0.12 });
+
+      function prep(sel, stagger, col) {
+        document.querySelectorAll(sel).forEach(function(el, i) {
+          el.classList.add('kytoo-out');
+          if (stagger) el.style.transitionDelay = ((col ? i % col : i) * stagger).toFixed(2) + 's';
+          io.observe(el);
+        });
+      }
+
+      // Section headings
+      prep('#san-pham .flex.items-center.gap-2',   0);
+      prep('#bo-suu-tap .flex.items-center.gap-2', 0);
+      prep('#ve-kytoo .flex.items-center.gap-2',   0);
+      prep('#lien-he .flex.items-center.gap-2',    0);
+      // Product cards — stagger theo cột (4 cột desktop)
+      prep('#san-pham article', 0.07, 4);
+      // Gallery cells — stagger nhẹ hơn
+      prep('#bo-suu-tap .grid > div', 0.05, 4);
+      // About — 2 cột fade lệch nhau
+      prep('#ve-kytoo .grid > div', 0.15, 0);
+      // Contact cards
+      prep('#lien-he a', 0.08, 0);
+      // Footer
+      prep('footer', 0);
+    })();
 
     document.addEventListener('keydown', function(e) {
       const modal = document.getElementById('product-modal');
