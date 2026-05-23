@@ -93,7 +93,7 @@
         <span class="w-8 h-0.5 bg-kytoo-red inline-block"></span>
         <h2 class="text-3xl font-display font-bold uppercase tracking-widest text-kytoo-cream">Sản Phẩm</h2>
       </div>
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer transition-all duration-200 hover:border-kytoo-red hover:scale-105" onclick="openModal('mysterybox')">
           <div class="aspect-square overflow-hidden"><img src="images/mysterybox.jpg" alt="Hộp Skin Game Bí Ẩn" class="w-full h-full object-cover"></div>
           <div class="p-3"><p class="text-kytoo-cream text-xs leading-snug mb-1 line-clamp-2">[TẶNG GIÁ ĐỠ + CARD] Hộp Skin Game Va-lô-Rần Bí Ẩn Dành Cho Game Thủ</p><p class="text-kytoo-red text-sm font-semibold">150.000₫ – 279.000₫</p></div>
@@ -237,6 +237,7 @@
   <script>
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const navEl = document.querySelector('nav');
 
     hamburgerBtn.addEventListener('click', function() {
       mobileMenu.classList.toggle('hidden');
@@ -249,8 +250,7 @@
     });
 
     document.addEventListener('click', function(e) {
-      const nav = document.querySelector('nav');
-      if (!nav.contains(e.target)) {
+      if (!navEl.contains(e.target)) {
         mobileMenu.classList.add('hidden');
       }
     });
@@ -379,7 +379,7 @@
     });
   </script>
 
-  <div id="product-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-kytoo-bg/80 backdrop-blur-sm" onclick="handleModalOverlayClick(event)">
+  <div id="product-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-kytoo-bg/80" onclick="handleModalOverlayClick(event)">
     <div class="bg-kytoo-bg-alt border border-kytoo-border w-full max-w-lg mx-4 relative" onclick="event.stopPropagation()">
       <button onclick="closeModal()" class="absolute top-3 right-3 text-kytoo-gray hover:text-kytoo-cream transition-colors" aria-label="Đóng">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -389,7 +389,7 @@
         <p id="modal-name" class="text-kytoo-cream font-semibold text-base mb-1 leading-snug"></p>
         <p id="modal-price" class="text-kytoo-red font-bold text-lg mb-3"></p>
         <p id="modal-desc" class="text-kytoo-gray text-sm leading-relaxed mb-5"></p>
-        <a id="modal-shopee-link" href="#shopee-placeholder" target="_blank" rel="noopener" class="block text-center bg-kytoo-red text-white uppercase tracking-widest px-8 py-3 text-sm font-semibold hover:bg-kytoo-red-dark transition-colors">Mua tren Shopee</a>
+        <a id="modal-shopee-link" href="#shopee-placeholder" target="_blank" rel="noopener" class="block text-center bg-kytoo-red text-white uppercase tracking-widest px-8 py-3 text-sm font-semibold hover:bg-kytoo-red-dark transition-colors">Mua trên Shopee</a>
       </div>
     </div>
   </div>

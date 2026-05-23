@@ -12,7 +12,8 @@ findings:
   info: 4
   total: 9
 warnings_fixed: 5
-status: warnings_fixed
+info_fixed: 4
+status: all_fixed
 ---
 
 # Phase 02: Code Review Report
