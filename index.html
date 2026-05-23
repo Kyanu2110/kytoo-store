@@ -32,6 +32,18 @@
       }
     }
   </script>
+  <style>
+    @keyframes kytoo-slide-right {
+      from { transform: translateX(48px); opacity: 0; }
+      to   { transform: translateX(0);    opacity: 1; }
+    }
+    @keyframes kytoo-slide-left {
+      from { transform: translateX(-48px); opacity: 0; }
+      to   { transform: translateX(0);     opacity: 1; }
+    }
+    .modal-slide-right { animation: kytoo-slide-right 0.22s ease-out; }
+    .modal-slide-left  { animation: kytoo-slide-left  0.22s ease-out; }
+  </style>
 </head>
 <body class="bg-kytoo-bg text-kytoo-cream font-body antialiased">
 
@@ -76,12 +88,12 @@
 
   <!-- Hero Section -->
   <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <img src="VALORANT_Jett_Red_1_1.webp" alt="" class="absolute inset-0 w-full h-full object-cover object-center" aria-hidden="true">
+    <img src="VALORANT_Jett_Red_1_1.webp" alt="" class="absolute inset-0 w-full h-full object-cover" style="object-position: center 20%" aria-hidden="true">
     <div class="absolute inset-0 bg-gradient-to-t from-kytoo-bg via-kytoo-bg/60 to-transparent"></div>
     <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-      <p class="text-kytoo-red text-xs uppercase tracking-widest mb-4 font-body font-semibold">Merch Valorant Việt Nam</p>
+      <p class="text-kytoo-red text-xs uppercase tracking-widest mb-4 font-body font-semibold">Shop đồ sưu tầm game valorant</p>
       <h1 class="font-display font-extrabold text-7xl md:text-9xl uppercase tracking-widest text-kytoo-cream leading-none mb-6">KYTOO</h1>
-      <p class="text-kytoo-cream text-lg md:text-xl font-body leading-relaxed mb-8 max-w-xl mx-auto">Merch gaming chính hiệu — thiết kế độc quyền cho fan Valorant</p>
+      <p class="text-kytoo-cream text-lg md:text-xl font-body leading-relaxed mb-8 max-w-xl mx-auto">Mua ở shop này là ngon luôn</p>
       <a href="#san-pham" class="inline-block bg-kytoo-red text-white uppercase tracking-widest px-10 py-4 font-body font-semibold text-sm hover:bg-kytoo-red-dark transition-colors">Khám phá sản phẩm</a>
     </div>
   </section>
@@ -200,19 +212,40 @@
         <span class="w-8 h-0.5 bg-kytoo-red inline-block"></span>
         <h2 class="text-3xl font-display font-bold uppercase tracking-widest text-kytoo-cream">Liên Hệ</h2>
       </div>
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href="#zalo-placeholder" class="flex items-center gap-3 border border-kytoo-border bg-kytoo-bg-alt px-6 py-4 hover:border-kytoo-red transition-colors">
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="https://zalo.me/0347470186" target="_blank" rel="noopener" class="flex items-center gap-3 border border-kytoo-border bg-kytoo-bg-alt px-6 py-4 hover:border-kytoo-red transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="7" x2="19" y2="7"/><line x1="19" y1="7" x2="5" y2="17"/><line x1="5" y1="17" x2="19" y2="17"/></svg>
           <div>
             <p class="text-kytoo-cream font-semibold text-sm uppercase tracking-widest">Zalo</p>
             <p class="text-kytoo-gray text-xs">Nhắn tin trực tiếp</p>
           </div>
         </a>
-        <a href="#facebook-placeholder" class="flex items-center gap-3 border border-kytoo-border bg-kytoo-bg-alt px-6 py-4 hover:border-kytoo-red transition-colors">
+        <a href="https://www.facebook.com/kyanu2110" target="_blank" rel="noopener" class="flex items-center gap-3 border border-kytoo-border bg-kytoo-bg-alt px-6 py-4 hover:border-kytoo-red transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           <div>
             <p class="text-kytoo-cream font-semibold text-sm uppercase tracking-widest">Facebook</p>
             <p class="text-kytoo-gray text-xs">Like trang KYTOO</p>
+          </div>
+        </a>
+        <a href="https://shopee.vn/kytoo_store" target="_blank" rel="noopener" class="flex items-center gap-3 border border-kytoo-border bg-kytoo-bg-alt px-6 py-4 hover:border-kytoo-red transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <div>
+            <p class="text-kytoo-cream font-semibold text-sm uppercase tracking-widest">Shopee</p>
+            <p class="text-kytoo-gray text-xs">Shop chính hãng</p>
+          </div>
+        </a>
+        <a href="https://www.tiktok.com/@kytoo.shop" target="_blank" rel="noopener" class="flex items-center gap-3 border border-kytoo-border bg-kytoo-bg-alt px-6 py-4 hover:border-kytoo-red transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.12 8.12 0 004.85 1.56V6.8a4.85 4.85 0 01-1.08-.11z"/></svg>
+          <div>
+            <p class="text-kytoo-cream font-semibold text-sm uppercase tracking-widest">TikTok</p>
+            <p class="text-kytoo-gray text-xs">@kytoo.shop</p>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/kytoo_store/" target="_blank" rel="noopener" class="flex items-center gap-3 border border-kytoo-border bg-kytoo-bg-alt px-6 py-4 hover:border-kytoo-red transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <div>
+            <p class="text-kytoo-cream font-semibold text-sm uppercase tracking-widest">Instagram</p>
+            <p class="text-kytoo-gray text-xs">@kytoo_store</p>
           </div>
         </a>
       </div>
@@ -223,11 +256,20 @@
   <footer class="bg-kytoo-bg border-t border-kytoo-border py-8">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <div class="flex items-center justify-center gap-6 mb-4">
-        <a href="#zalo-placeholder" class="text-kytoo-gray hover:text-kytoo-cream transition-colors" aria-label="Zalo">
+        <a href="https://zalo.me/0347470186" target="_blank" rel="noopener" class="text-kytoo-gray hover:text-kytoo-cream transition-colors" aria-label="Zalo">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="5" y1="7" x2="19" y2="7"/><line x1="19" y1="7" x2="5" y2="17"/><line x1="5" y1="17" x2="19" y2="17"/></svg>
         </a>
-        <a href="#facebook-placeholder" class="text-kytoo-gray hover:text-kytoo-cream transition-colors" aria-label="Facebook">
+        <a href="https://www.facebook.com/kyanu2110" target="_blank" rel="noopener" class="text-kytoo-gray hover:text-kytoo-cream transition-colors" aria-label="Facebook">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://shopee.vn/kytoo_store" target="_blank" rel="noopener" class="text-kytoo-gray hover:text-kytoo-cream transition-colors" aria-label="Shopee">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@kytoo.shop" target="_blank" rel="noopener" class="text-kytoo-gray hover:text-kytoo-cream transition-colors" aria-label="TikTok">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.12 8.12 0 004.85 1.56V6.8a4.85 4.85 0 01-1.08-.11z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/kytoo_store/" target="_blank" rel="noopener" class="text-kytoo-gray hover:text-kytoo-cream transition-colors" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         </a>
       </div>
       <p class="text-kytoo-gray text-sm">© 2025 KYTOO Store. All rights reserved.</p>
@@ -259,101 +301,156 @@
       mysterybox: {
         name: '[TẶNG GIÁ ĐỠ + CARD] Hộp Skin Game Va-lô-Rần Bí Ẩn Dành Cho Game Thủ',
         price: '150.000₫ – 279.000₫',
-        img: 'images/mysterybox.jpg',
+        imgs: ['images/mysterybox.jpg'],
         desc: 'Mở hộp bí ẩn để nhận bộ skin Valorant ngẫu nhiên — thêm phụ kiện giá đỡ và card đặc biệt tặng kèm.',
         shopee: '#shopee-mysterybox'
       },
       keycapcustom: {
         name: 'Keycaps Valorant 3D Hình Agent Cute Dành Cho Bàn Phím Cơ Tổng hợp Nhựa Tổng hợp',
         price: '279.000₫',
-        img: 'images/keycapcustom.jpg',
+        imgs: ['images/keycapcustom.jpg'],
         desc: 'Keycap 3D in hình Agent Valorant nổi bật, chất liệu nhựa tổng hợp bền — nâng cấp bàn phím cơ của bạn ngay.',
         shopee: '#shopee-keycapcustom'
       },
       keycap14phim: {
         name: 'Bộ Keycap Valorant 14 Phím, Nhựa PBT Profile OEM Hình Agent Cute Dành Cho Game Thủ Không dây',
         price: '251.100₫ – 279.000₫',
-        img: 'images/keycap14phim.jpg',
+        imgs: ['images/keycap14phim.jpg'],
         desc: 'Bộ 14 keycap PBT chuẩn OEM in hình Agent dễ thương — tương thích với hầu hết bàn phím cơ và không dây.',
         shopee: '#shopee-keycap14phim'
       },
       tactical: {
         name: '[ẢNH THẬT] Mô Hình Tactical Bear, Phụ Kiện Flex Va lô Rần Dễ Thương Xả Stress',
         price: '279.000₫',
-        img: 'images/tactical.jpg',
+        imgs: ['images/tactical.jpg'],
         desc: 'Mô hình Tactical Bear chính xác từng chi tiết — flex bàn gaming, xả stress cực hiệu quả.',
         shopee: '#shopee-tactical'
       },
       wingman: {
         name: '[ẢNH THẬT] Mô Hình Wingman, Phụ Kiện Flex Va lô Rần Dễ Thương Xả Stress',
         price: '152.100₫',
-        img: 'images/wingman.jpg',
+        imgs: ['images/wingman.jpg'],
         desc: 'Người bạn đồng hành Wingman thu nhỏ — trang trí bàn làm việc và flex với đồng đội cùng chung server.',
         shopee: '#shopee-wingman'
       },
       nhanclove: {
         name: 'Bộ 3 Nhẫn Clove Tuỳ Chỉnh Được Kích Thước, Trang Sức Valorant Đeo Tay, Độc Đáo Cho Duo Của Bạn',
         price: '79.000₫',
-        img: 'images/nhanclove.jpg',
+        imgs: ['images/nhanclove.jpg'],
         desc: 'Bộ 3 nhẫn lấy cảm hứng từ Agent Clove — size tùy chỉnh, lý tưởng cho cặp đôi game thủ.',
         shopee: '#shopee-nhanclove'
       },
       nuochoa: {
         name: 'Nước Hoa Va Lo Rừng Dung Tích 10ml Tăng Cá Tính Cùng Agent Của Bạn. Hương Hoa Cỏ Tự Nhiên, Lưu Hương Lâu',
         price: '69.000₫',
-        img: 'images/nuochoa.jpg',
+        imgs: ['images/nuochoa.jpg'],
         desc: 'Nước hoa mini 10ml hương thiên nhiên — mang cá tính Agent Valorant vào cuộc sống thực của bạn.',
         shopee: '#shopee-nuochoa'
       },
       blindbox: {
         name: '[MUA MÓC KHOÁ TẶNG STICKER] - Túi mù Móc khoá Valorant Skin Dành Cho Game Thủ Valorant',
         price: '67.150₫',
-        img: 'images/blindbox.jpg',
+        imgs: ['images/blindbox.jpg'],
         desc: 'Móc khoá skin Valorant bí ẩn — mỗi túi mù là một skin ngẫu nhiên, kèm sticker tặng kèm.',
         shopee: '#shopee-blindbox'
       },
       padchuot: {
         name: 'Tấm Lót Chuột Va-Lô-Rừng HandMade Cỡ Nhỏ 30x25cm Dành Cho Game Thủ Siêu Ngầu',
         price: '63.200₫ – 79.000₫',
-        img: 'images/padchuot.jpg',
+        imgs: ['images/padchuot.jpg'],
         desc: 'Pad chuột handmade 30×25cm in hoa văn Valorant — bảo vệ mặt bàn và tăng độ chính xác khi aim.',
         shopee: '#shopee-padchuot'
       },
       miengketay: {
         name: 'Miếng Kê Tay Hình Thú Corgi Siêu Cute Giúp Bảo Vệ Cổ Tay Khi Sử Dụng Máy Tính',
         price: '55.200₫',
-        img: 'images/miengketay.jpg',
+        imgs: ['images/miengketay.jpg'],
         desc: 'Kê tay hình Corgi dễ thương — giảm mỏi cổ tay sau những session gaming dài.',
         shopee: '#shopee-miengketay'
       },
       nhandaychuyen: {
         name: 'Nhẫn Sage Valorant, Đồ Trang Sức Valorant',
         price: '37.000₫ – 44.100₫',
-        img: 'images/nhandaychuyen.png',
+        imgs: ['images/nhandaychuyen.png'],
         desc: 'Nhẫn lấy cảm hứng từ Agent Sage — đơn giản, tinh tế, dành cho người yêu Valorant.',
         shopee: '#shopee-nhandaychuyen'
       },
       meotreomanhinh: {
         name: 'Mô Hình Mèo Trang Trí Màn Hình Máy Tính Và Bàn Làm Việc Dễ Thương',
         price: '35.000₫',
-        img: 'images/meotreomanhinh.jpg',
+        imgs: ['images/meotreomanhinh.jpg'],
         desc: 'Mèo nhỏ treo mép màn hình — trang trí bàn làm việc thêm cute mà không tốn không gian.',
         shopee: '#shopee-meotreomanhinh'
       }
     };
 
+    let _modalImgs = [];
+    let _modalIdx = 0;
+    const _imgCache = {};
+
     function openModal(productId) {
       const p = PRODUCTS[productId];
       if (!p) return;
-      const img = document.getElementById('modal-img');
-      img.src = p.img;
-      img.alt = p.name;
       document.getElementById('modal-name').textContent = p.name;
       document.getElementById('modal-price').textContent = p.price;
       document.getElementById('modal-desc').textContent = p.desc;
       document.getElementById('modal-shopee-link').href = p.shopee;
+      _modalImgs = _imgCache[productId] || p.imgs;
+      _modalIdx = 0;
+      _renderModalImg();
       document.getElementById('product-modal').classList.remove('hidden');
       document.body.style.overflow = 'hidden';
+      if (!_imgCache[productId]) _detectImgs(productId);
+    }
+
+    function _detectImgs(productId) {
+      const found = [];
+      let i = 1;
+      function tryNext() {
+        const path = 'images/' + productId + '_' + i + '.jpg';
+        const t = new Image();
+        t.onload = function() { found.push(path); i++; i <= 50 ? tryNext() : done(); };
+        t.onerror = done;
+        t.src = path;
+      }
+      function done() {
+        if (!found.length) return;
+        _imgCache[productId] = found;
+        const modal = document.getElementById('product-modal');
+        if (!modal.classList.contains('hidden') && _modalImgs === PRODUCTS[productId].imgs) {
+          _modalImgs = found;
+          _modalIdx = 0;
+          _renderModalImg();
+        }
+      }
+      tryNext();
+    }
+
+    function _renderModalImg(dir) {
+      const img = document.getElementById('modal-img');
+      if (dir) {
+        img.classList.remove('modal-slide-left', 'modal-slide-right');
+        void img.offsetWidth;
+        img.classList.add(dir > 0 ? 'modal-slide-right' : 'modal-slide-left');
+      }
+      img.src = _modalImgs[_modalIdx];
+      img.alt = document.getElementById('modal-name').textContent;
+      const multi = _modalImgs.length > 1;
+      document.getElementById('modal-prev').classList.toggle('hidden', !multi);
+      document.getElementById('modal-next').classList.toggle('hidden', !multi);
+      const counter = document.getElementById('modal-counter');
+      if (multi) {
+        counter.classList.remove('hidden');
+        counter.textContent =
+          String(_modalIdx + 1).padStart(2, '0') + ' / ' + String(_modalImgs.length).padStart(2, '0');
+      } else {
+        counter.classList.add('hidden');
+      }
+    }
+
+    function modalNav(dir) {
+      _modalIdx = (_modalIdx + dir + _modalImgs.length) % _modalImgs.length;
+      _renderModalImg(dir);
     }
 
     function closeModal() {
@@ -368,9 +465,12 @@
     }
 
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        const modal = document.getElementById('product-modal');
-        if (modal && !modal.classList.contains('hidden')) closeModal();
+      const modal = document.getElementById('product-modal');
+      const modalOpen = modal && !modal.classList.contains('hidden');
+      if (e.key === 'Escape' && modalOpen) closeModal();
+      if (modalOpen && _modalImgs.length > 1) {
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); modalNav(-1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); modalNav(1); }
       }
       if ((e.key === 'Enter' || e.key === ' ') && e.target.tagName === 'ARTICLE') {
         e.preventDefault();
@@ -384,7 +484,16 @@
       <button onclick="closeModal()" class="absolute top-3 right-3 text-kytoo-gray hover:text-kytoo-cream transition-colors" aria-label="Đóng">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
-      <div class="aspect-square overflow-hidden"><img id="modal-img" src="" alt="" class="w-full h-full object-cover"></div>
+      <div class="relative aspect-square overflow-hidden">
+        <img id="modal-img" src="" alt="" class="w-full h-full object-cover">
+        <button id="modal-prev" onclick="modalNav(-1)" class="absolute left-0 top-0 h-full px-3 flex items-center bg-gradient-to-r from-kytoo-bg/70 to-transparent text-kytoo-cream hover:text-white transition-colors hidden" aria-label="Ảnh trước">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button id="modal-next" onclick="modalNav(1)" class="absolute right-0 top-0 h-full px-3 flex items-center bg-gradient-to-l from-kytoo-bg/70 to-transparent text-kytoo-cream hover:text-white transition-colors hidden" aria-label="Ảnh sau">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+        <div id="modal-counter" class="absolute bottom-3 right-3 text-kytoo-cream text-xs font-display font-bold tracking-widest bg-kytoo-bg/70 px-2 py-1 hidden"></div>
+      </div>
       <div class="p-6">
         <p id="modal-name" class="text-kytoo-cream font-semibold text-base mb-1 leading-snug"></p>
         <p id="modal-price" class="text-kytoo-red font-bold text-lg mb-3"></p>
