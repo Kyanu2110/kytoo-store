@@ -72,8 +72,10 @@ Plans:
 **Requirements:**
 - TECH-03: Deploy tĩnh — GitHub Pages / Netlify
 
-**Plans:**
-1. `03-01` — Deploy + điền Shopee links thật + final QA
+**Plans:** 1 plan
+
+Plans:
+- [ ] 03-01-PLAN.md — Gitignore + asset staging, GitHub repo + Pages setup, collect 12 Shopee URLs, fill all placeholders, final QA on live URL
 
 **Success Criteria:**
 1. Site live trên URL công khai (GitHub Pages hoặc Netlify)
