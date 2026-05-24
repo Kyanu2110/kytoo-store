@@ -156,6 +156,53 @@
       box-shadow: 0 0 18px rgba(255, 70, 85, 0.55);
     }
 
+    /* ── Splash Screen ── */
+    #kytoo-splash {
+      position: fixed;
+      inset: 0;
+      background: #0F1923;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s ease;
+    }
+    #kytoo-splash.kytoo-splash-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #kytoo-splash-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: kytoo-splash-fadein 0.6s 0.2s ease forwards;
+    }
+    @keyframes kytoo-splash-fadein {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .kytoo-splash-title {
+      font-family: 'VALORANT', 'Rajdhani', sans-serif;
+      font-size: clamp(3.5rem, 16vw, 8rem);
+      color: #ECE8E1;
+      letter-spacing: 0.15em;
+      line-height: 1;
+    }
+    .kytoo-splash-bar {
+      width: 48px;
+      height: 2px;
+      background: #FF4655;
+    }
+    .kytoo-splash-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.45em;
+      color: #768079;
+      text-transform: uppercase;
+    }
+
     /* Hero title — Valorant font */
     .kytoo-hero-title {
       font-family: 'VALORANT', 'Rajdhani', sans-serif;
@@ -172,6 +219,23 @@
   </style>
 </head>
 <body class="bg-kytoo-bg text-kytoo-cream font-body antialiased">
+
+  <!-- ── Splash Screen ── -->
+  <div id="kytoo-splash" aria-hidden="true">
+    <div id="kytoo-splash-inner">
+      <!-- Valorant-style V chevron -->
+      <svg width="80" height="56" viewBox="0 0 80 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <filter id="splash-glow">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <polyline points="2,4 40,52 78,4" stroke="#FF4655" stroke-width="7" stroke-linejoin="miter" stroke-linecap="square" fill="none" filter="url(#splash-glow)"/>
+      </svg>
+      <div class="kytoo-splash-title">KYTOO</div>
+      <div class="kytoo-splash-bar"></div>
+      <div class="kytoo-splash-sub">Merch Valorant · Việt Nam</div>
+    </div>
+  </div>
   <div class="kytoo-scanlines" aria-hidden="true"></div>
 
   <!-- Navbar -->
@@ -707,6 +771,20 @@
         e.target.click();
       }
     });
+
+    // Splash screen auto-dismiss
+    (function() {
+      var splash = document.getElementById('kytoo-splash');
+      if (!splash) return;
+      document.body.style.overflow = 'hidden';
+      setTimeout(function() {
+        splash.classList.add('kytoo-splash-out');
+        setTimeout(function() {
+          splash.remove();
+          document.body.style.overflow = '';
+        }, 520);
+      }, 2200);
+    })();
   </script>
 
   <div id="product-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-kytoo-bg/80" onclick="handleModalOverlayClick(event)">
