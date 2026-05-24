@@ -75,7 +75,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 03-01-PLAN.md — Gitignore + asset staging, GitHub repo + Pages setup, collect 12 Shopee URLs, fill all placeholders, final QA on live URL
+- [x] 03-01-PLAN.md — Gitignore + asset staging, GitHub repo + Pages setup, collect 12 Shopee URLs, fill all placeholders, final QA on live URL
 
 **Success Criteria:**
 1. Site live trên URL công khai (GitHub Pages hoặc Netlify)
