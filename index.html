@@ -6,7 +6,7 @@
   <title>KYTOO Store — Merch Valorant Việt Nam</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700;800&family=Inter:wght@400;500;600&family=Be+Vietnam+Pro:wght@700;800;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -23,6 +23,7 @@
           },
           fontFamily: {
             display: ['Rajdhani', 'sans-serif'],
+            heading: ['"Be Vietnam Pro"', 'Inter', 'sans-serif'],
             body:    ['Inter', 'sans-serif'],
           },
           scrollMarginTop: {
@@ -33,6 +34,14 @@
     }
   </script>
   <style>
+    @font-face {
+      font-family: 'VALORANT';
+      src: url('fonts/Valorant Font.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
     @keyframes kytoo-slide-right {
       from { transform: translateX(48px); opacity: 0; }
       to   { transform: translateX(0);    opacity: 1; }
@@ -54,9 +63,116 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* ── Gaming Effects ── */
+
+    /* Scanline overlay */
+    .kytoo-scanlines {
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.04) 2px,
+        rgba(0, 0, 0, 0.04) 4px
+      );
+      pointer-events: none;
+      z-index: 9998;
+    }
+
+    /* Glitch animation */
+    @keyframes kytoo-glitch {
+      0%, 87%, 100% {
+        text-shadow: none;
+        transform: translate(0) skewX(0);
+      }
+      88% {
+        text-shadow: -3px 0 #FF4655, 3px 0 rgba(0, 240, 255, 0.7);
+        transform: translate(-2px, 0) skewX(-1deg);
+      }
+      89% {
+        text-shadow: 3px 0 #FF4655, -3px 0 rgba(0, 240, 255, 0.6);
+        transform: translate(2px, 0) skewX(1deg);
+      }
+      90% {
+        text-shadow: -2px 0 rgba(255, 70, 85, 0.8);
+        transform: translate(1px, 0);
+      }
+      91% {
+        text-shadow: none;
+        transform: translate(0);
+      }
+    }
+    .kytoo-glitch {
+      animation: kytoo-glitch 5s ease-in-out infinite;
+    }
+    .kytoo-glitch-sm {
+      animation: kytoo-glitch 8s ease-in-out infinite;
+      animation-delay: 3s;
+    }
+
+    /* Moving scan line (hero) */
+    @keyframes kytoo-scan {
+      0%   { top: -2px; opacity: 0; }
+      5%   { opacity: 1; }
+      95%  { opacity: 1; }
+      100% { top: 100%; opacity: 0; }
+    }
+    .kytoo-scan-line {
+      position: absolute;
+      left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 70, 85, 0.35) 30%, rgba(255, 70, 85, 0.55) 50%, rgba(255, 70, 85, 0.35) 70%, transparent 100%);
+      animation: kytoo-scan 7s linear infinite;
+      pointer-events: none;
+      z-index: 6;
+    }
+
+    /* Product card glow */
+    .kytoo-card {
+      transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    }
+    .kytoo-card:hover {
+      border-color: #FF4655;
+      transform: scale(1.04);
+      box-shadow: 0 0 0 1px #FF4655, 0 0 22px rgba(255, 70, 85, 0.28), inset 0 0 15px rgba(255, 70, 85, 0.04);
+    }
+
+    /* Section number pulse */
+    @keyframes kytoo-num-pulse {
+      0%, 100% { opacity: 1; text-shadow: none; }
+      50% { opacity: 0.65; text-shadow: 0 0 12px rgba(255, 70, 85, 0.6); }
+    }
+    .kytoo-num {
+      animation: kytoo-num-pulse 4s ease-in-out infinite;
+    }
+
+    /* CTA button glow */
+    .kytoo-btn-glow {
+      transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .kytoo-btn-glow:hover {
+      box-shadow: 0 0 18px rgba(255, 70, 85, 0.55);
+    }
+
+    /* Hero title — Valorant font */
+    .kytoo-hero-title {
+      font-family: 'VALORANT', 'Rajdhani', sans-serif;
+      font-size: clamp(5rem, 22vw, 18rem);
+      letter-spacing: 0.08em;
+      line-height: 1;
+      text-align: center;
+      /* Break free khỏi max-w-4xl container, center theo viewport */
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      margin-left: -50vw;
+    }
   </style>
 </head>
 <body class="bg-kytoo-bg text-kytoo-cream font-body antialiased">
+  <div class="kytoo-scanlines" aria-hidden="true"></div>
 
   <!-- Navbar -->
   <nav class="fixed top-0 left-0 right-0 z-50 h-16 bg-kytoo-bg border-b border-kytoo-border">
@@ -68,13 +184,13 @@
       </div>
       <!-- Center logo -->
       <div class="absolute left-1/2 -translate-x-1/2">
-        <span class="font-display font-bold text-xl tracking-widest text-kytoo-cream uppercase">KYTOO</span>
+        <span class="font-display font-bold text-xl tracking-widest text-kytoo-cream uppercase kytoo-glitch-sm">KYTOO</span>
       </div>
       <!-- Right nav links + CTA (desktop) -->
       <div class="hidden md:flex items-center gap-8">
         <a href="#ve-kytoo" class="text-kytoo-cream text-sm uppercase tracking-widest hover:text-kytoo-red transition-colors">Về KYTOO</a>
         <a href="#lien-he" class="text-kytoo-cream text-sm uppercase tracking-widest hover:text-kytoo-red transition-colors">Liên hệ</a>
-        <a href="#shopee-placeholder" class="bg-kytoo-red text-white uppercase tracking-widest px-6 py-2 text-sm font-semibold hover:bg-kytoo-red-dark transition-colors">Mua ngay</a>
+        <a href="https://shopee.vn/kytoo_store" target="_blank" rel="noopener noreferrer" class="bg-kytoo-red text-white uppercase tracking-widest px-6 py-2 text-sm font-semibold hover:bg-kytoo-red-dark transition-colors">Mua ngay</a>
       </div>
       <!-- Hamburger (mobile) -->
       <button id="hamburger-btn" class="md:hidden text-kytoo-cream p-2" aria-label="Menu">
@@ -92,7 +208,7 @@
         <a href="#bo-suu-tap" class="text-kytoo-cream text-sm uppercase tracking-widest hover:text-kytoo-red transition-colors">Bộ sưu tập</a>
         <a href="#ve-kytoo" class="text-kytoo-cream text-sm uppercase tracking-widest hover:text-kytoo-red transition-colors">Về KYTOO</a>
         <a href="#lien-he" class="text-kytoo-cream text-sm uppercase tracking-widest hover:text-kytoo-red transition-colors">Liên hệ</a>
-        <a href="#shopee-placeholder" class="bg-kytoo-red text-white uppercase tracking-widest px-6 py-2 text-sm font-semibold hover:bg-kytoo-red-dark transition-colors inline-block text-center">Mua ngay</a>
+        <a href="https://shopee.vn/kytoo_store" target="_blank" rel="noopener noreferrer" class="bg-kytoo-red text-white uppercase tracking-widest px-6 py-2 text-sm font-semibold hover:bg-kytoo-red-dark transition-colors inline-block text-center">Mua ngay</a>
       </div>
     </div>
   </nav>
@@ -106,11 +222,12 @@
       <source src="hero.mp4" type="video/mp4">
     </video>
     <div class="absolute inset-0 bg-gradient-to-t from-kytoo-bg via-kytoo-bg/60 to-transparent"></div>
+    <div class="kytoo-scan-line" aria-hidden="true"></div>
     <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
       <p class="text-kytoo-red text-xs uppercase tracking-widest mb-4 font-body font-semibold">Shop đồ sưu tầm game valorant</p>
-      <h1 class="font-display font-extrabold text-7xl md:text-9xl uppercase tracking-widest text-kytoo-cream leading-none mb-6">KYTOO</h1>
+      <h1 class="kytoo-hero-title text-kytoo-cream mb-6 kytoo-glitch">KYTOO</h1>
       <p class="text-kytoo-cream text-lg md:text-xl font-body leading-relaxed mb-8 max-w-xl mx-auto">Mua ở shop này là ngon luôn</p>
-      <a href="#san-pham" class="inline-block bg-kytoo-red text-white uppercase tracking-widest px-10 py-4 font-body font-semibold text-sm hover:bg-kytoo-red-dark transition-colors">Khám phá sản phẩm</a>
+      <a href="#san-pham" class="inline-block bg-kytoo-red text-white uppercase tracking-widest px-10 py-4 font-body font-semibold text-sm hover:bg-kytoo-red-dark kytoo-btn-glow">Khám phá sản phẩm</a>
     </div>
   </section>
 
@@ -124,56 +241,56 @@
       <div class="flex items-end justify-between border-b border-kytoo-border pb-5 mb-8">
         <div class="flex items-center gap-4">
           <span class="w-1 h-10 bg-kytoo-red flex-shrink-0"></span>
-          <h2 class="text-4xl md:text-5xl font-display font-bold uppercase tracking-widest text-kytoo-cream leading-none">Sản Phẩm</h2>
+          <h2 class="text-4xl md:text-5xl font-heading font-bold uppercase tracking-widest text-kytoo-cream leading-none">Sản Phẩm</h2>
         </div>
-        <span class="text-kytoo-red font-display font-bold text-xl tracking-widest hidden md:block">01</span>
+        <span class="text-kytoo-red font-display font-bold text-xl tracking-widest hidden md:block kytoo-num">01</span>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer transition-all duration-200 hover:border-kytoo-red hover:scale-105" onclick="openModal('mysterybox')">
+        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer kytoo-card" onclick="openModal('mysterybox')">
           <div class="aspect-square overflow-hidden"><img src="images/mysterybox.jpg" alt="Hộp Skin Game Bí Ẩn" class="w-full h-full object-cover"></div>
           <div class="p-3"><p class="text-kytoo-cream text-xs leading-snug mb-1 line-clamp-2">[TẶNG GIÁ ĐỠ + CARD] Hộp Skin Game Va-lô-Rần Bí Ẩn Dành Cho Game Thủ</p><p class="text-kytoo-red text-sm font-semibold">150.000₫ – 279.000₫</p></div>
         </article>
-        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer transition-all duration-200 hover:border-kytoo-red hover:scale-105" onclick="openModal('keycapcustom')">
+        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer kytoo-card" onclick="openModal('keycapcustom')">
           <div class="aspect-square overflow-hidden"><img src="images/keycapcustom.jpg" alt="Keycaps Valorant 3D" class="w-full h-full object-cover"></div>
           <div class="p-3"><p class="text-kytoo-cream text-xs leading-snug mb-1 line-clamp-2">Keycaps Valorant 3D Hình Agent Cute Dành Cho Bàn Phím Cơ Tổng hợp Nhựa Tổng hợp</p><p class="text-kytoo-red text-sm font-semibold">279.000₫</p></div>
         </article>
-        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer transition-all duration-200 hover:border-kytoo-red hover:scale-105" onclick="openModal('keycap14phim')">
+        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer kytoo-card" onclick="openModal('keycap14phim')">
           <div class="aspect-square overflow-hidden"><img src="images/keycap14phim.jpg" alt="Bộ Keycap Valorant 14 Phím" class="w-full h-full object-cover"></div>
           <div class="p-3"><p class="text-kytoo-cream text-xs leading-snug mb-1 line-clamp-2">Bộ Keycap Valorant 14 Phím, Nhựa PBT Profile OEM Hình Agent Cute Dành Cho Game Thủ Không dây</p><p class="text-kytoo-red text-sm font-semibold">251.100₫ – 279.000₫</p></div>
         </article>
-        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer transition-all duration-200 hover:border-kytoo-red hover:scale-105" onclick="openModal('tactical')">
+        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer kytoo-card" onclick="openModal('tactical')">
           <div class="aspect-square overflow-hidden"><img src="images/tactical.jpg" alt="Mô Hình Tactical Bear" class="w-full h-full object-cover"></div>
           <div class="p-3"><p class="text-kytoo-cream text-xs leading-snug mb-1 line-clamp-2">[ẢNH THẬT] Mô Hình Tactical Bear, Phụ Kiện Flex Va lô Rần Dễ Thương Xả Stress</p><p class="text-kytoo-red text-sm font-semibold">279.000₫</p></div>
         </article>
-        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer transition-all duration-200 hover:border-kytoo-red hover:scale-105" onclick="openModal('wingman')">
+        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer kytoo-card" onclick="openModal('wingman')">
           <div class="aspect-square overflow-hidden"><img src="images/wingman.jpg" alt="Mô Hình Wingman" class="w-full h-full object-cover"></div>
           <div class="p-3"><p class="text-kytoo-cream text-xs leading-snug mb-1 line-clamp-2">[ẢNH THẬT] Mô Hình Wingman, Phụ Kiện Flex Va lô Rần Dễ Thương Xả Stress</p><p class="text-kytoo-red text-sm font-semibold">152.100₫</p></div>
         </article>
-        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer transition-all duration-200 hover:border-kytoo-red hover:scale-105" onclick="openModal('nhanclove')">
+        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer kytoo-card" onclick="openModal('nhanclove')">
           <div class="aspect-square overflow-hidden"><img src="images/nhanclove.jpg" alt="Bộ 3 Nhẫn Clove" class="w-full h-full object-cover"></div>
           <div class="p-3"><p class="text-kytoo-cream text-xs leading-snug mb-1 line-clamp-2">Bộ 3 Nhẫn Clove Tuỳ Chỉnh Được Kích Thước, Trang Sức Valorant Đeo Tay, Độc Đáo Cho Duo Của Bạn</p><p class="text-kytoo-red text-sm font-semibold">79.000₫</p></div>
         </article>
-        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer transition-all duration-200 hover:border-kytoo-red hover:scale-105" onclick="openModal('nuochoa')">
+        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer kytoo-card" onclick="openModal('nuochoa')">
           <div class="aspect-square overflow-hidden"><img src="images/nuochoa.jpg" alt="Nước Hoa Valorant" class="w-full h-full object-cover"></div>
           <div class="p-3"><p class="text-kytoo-cream text-xs leading-snug mb-1 line-clamp-2">Nước Hoa Va Lo Rừng Dung Tích 10ml Tăng Cá Tính Cùng Agent Của Bạn. Hương Hoa Cỏ Tự Nhiên, Lưu Hương Lâu</p><p class="text-kytoo-red text-sm font-semibold">69.000₫</p></div>
         </article>
-        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer transition-all duration-200 hover:border-kytoo-red hover:scale-105" onclick="openModal('blindbox')">
+        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer kytoo-card" onclick="openModal('blindbox')">
           <div class="aspect-square overflow-hidden"><img src="images/blindbox.jpg" alt="Túi Mù Móc Khoá Valorant" class="w-full h-full object-cover"></div>
           <div class="p-3"><p class="text-kytoo-cream text-xs leading-snug mb-1 line-clamp-2">[MUA MÓC KHOÁ TẶNG STICKER] - Túi mù Móc khoá Valorant Skin Dành Cho Game Thủ Valorant</p><p class="text-kytoo-red text-sm font-semibold">67.150₫</p></div>
         </article>
-        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer transition-all duration-200 hover:border-kytoo-red hover:scale-105" onclick="openModal('padchuot')">
+        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer kytoo-card" onclick="openModal('padchuot')">
           <div class="aspect-square overflow-hidden"><img src="images/padchuot.jpg" alt="Tấm Lót Chuột Valorant" class="w-full h-full object-cover"></div>
           <div class="p-3"><p class="text-kytoo-cream text-xs leading-snug mb-1 line-clamp-2">Tấm Lót Chuột Va-Lô-Rừng HandMade Cỡ Nhỏ 30x25cm Dành Cho Game Thủ Siêu Ngầu</p><p class="text-kytoo-red text-sm font-semibold">63.200₫ – 79.000₫</p></div>
         </article>
-        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer transition-all duration-200 hover:border-kytoo-red hover:scale-105" onclick="openModal('miengketay')">
+        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer kytoo-card" onclick="openModal('miengketay')">
           <div class="aspect-square overflow-hidden"><img src="images/miengketay.jpg" alt="Miếng Kê Tay Corgi" class="w-full h-full object-cover"></div>
           <div class="p-3"><p class="text-kytoo-cream text-xs leading-snug mb-1 line-clamp-2">Miếng Kê Tay Hình Thú Corgi Siêu Cute Giúp Bảo Vệ Cổ Tay Khi Sử Dụng Máy Tính</p><p class="text-kytoo-red text-sm font-semibold">55.200₫</p></div>
         </article>
-        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer transition-all duration-200 hover:border-kytoo-red hover:scale-105" onclick="openModal('nhandaychuyen')">
+        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer kytoo-card" onclick="openModal('nhandaychuyen')">
           <div class="aspect-square overflow-hidden"><img src="images/nhandaychuyen.png" alt="Nhẫn Sage Valorant" class="w-full h-full object-cover"></div>
           <div class="p-3"><p class="text-kytoo-cream text-xs leading-snug mb-1 line-clamp-2">Nhẫn Sage Valorant, Đồ Trang Sức Valorant</p><p class="text-kytoo-red text-sm font-semibold">37.000₫ – 44.100₫</p></div>
         </article>
-        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer transition-all duration-200 hover:border-kytoo-red hover:scale-105" onclick="openModal('meotreomanhinh')">
+        <article tabindex="0" class="bg-kytoo-bg-alt border border-kytoo-border cursor-pointer kytoo-card" onclick="openModal('meotreomanhinh')">
           <div class="aspect-square overflow-hidden"><img src="images/meotreomanhinh.jpg" alt="Mô Hình Mèo Trang Trí Màn Hình" class="w-full h-full object-cover"></div>
           <div class="p-3"><p class="text-kytoo-cream text-xs leading-snug mb-1 line-clamp-2">Mô Hình Mèo Trang Trí Màn Hình Máy Tính Và Bàn Làm Việc Dễ Thương</p><p class="text-kytoo-red text-sm font-semibold">35.000₫</p></div>
         </article>
@@ -190,9 +307,9 @@
       <div class="flex items-end justify-between border-b border-kytoo-border pb-5 mb-8">
         <div class="flex items-center gap-4">
           <span class="w-1 h-10 bg-kytoo-red flex-shrink-0"></span>
-          <h2 class="text-4xl md:text-5xl font-display font-bold uppercase tracking-widest text-kytoo-cream leading-none">Bộ Sưu Tập</h2>
+          <h2 class="text-4xl md:text-5xl font-heading font-bold uppercase tracking-widest text-kytoo-cream leading-none">Bộ Sưu Tập</h2>
         </div>
-        <span class="text-kytoo-red font-display font-bold text-xl tracking-widest hidden md:block">02</span>
+        <span class="text-kytoo-red font-display font-bold text-xl tracking-widest hidden md:block kytoo-num">02</span>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
         <div class="lg:col-span-2 aspect-video overflow-hidden"><img src="images/mysterybox.jpg" alt="" class="w-full h-full object-cover" aria-hidden="true"></div>
@@ -220,23 +337,52 @@
       <div class="flex items-end justify-between border-b border-kytoo-border pb-5 mb-8">
         <div class="flex items-center gap-4">
           <span class="w-1 h-10 bg-kytoo-red flex-shrink-0"></span>
-          <h2 class="text-4xl md:text-5xl font-display font-bold uppercase tracking-widest text-kytoo-cream leading-none">Về KYTOO</h2>
+          <h2 class="text-4xl md:text-5xl font-heading font-bold uppercase tracking-widest text-kytoo-cream leading-none">Về KYTOO</h2>
         </div>
-        <span class="text-kytoo-red font-display font-bold text-xl tracking-widest hidden md:block">03</span>
+        <span class="text-kytoo-red font-display font-bold text-xl tracking-widest hidden md:block kytoo-num">03</span>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div>
-          <p class="text-kytoo-cream leading-relaxed mb-4">KYTOO là thương hiệu merch Valorant hàng đầu Việt Nam — nơi những người yêu game tìm thấy sản phẩm thể hiện phong cách riêng của mình. Mỗi thiết kế đều được tạo ra bởi fan, dành cho fan.</p>
-          <p class="text-kytoo-cream leading-relaxed">Từ keycap đến mô hình, trang sức đến nước hoa — chúng tôi mang thế giới Valorant vào cuộc sống hàng ngày của bạn với chất lượng thể hiện đúng tinh thần game thủ.</p>
+        <div class="flex flex-col gap-4">
+          <p class="text-kytoo-cream leading-relaxed">KYTOO là tiệm sưu tầm đồ Valorant nho nhỏ — không phải được xây dựng bởi những người kinh doanh thuần túy, mà bởi những fan thật sự hiểu Valorant là gì và cảm giác đó có nghĩa như thế nào.</p>
+          <p class="text-kytoo-cream leading-relaxed">Mỗi sản phẩm ở đây đều có chủ đích. Từ keycap đến mô hình, từ trang sức đến nước hoa — chúng tôi không chọn hàng cho có, mà chọn những thứ thật sự mang thế giới Valorant vào cuộc sống hàng ngày của bạn. Những món đồ bạn dùng mỗi ngày, nhưng nhìn vào là nhớ ngay mình là ai.</p>
+          <p class="text-kytoo-cream leading-relaxed">Vì với chúng tôi, Valorant không chỉ là một tựa game. Đó là phong cách. Là cộng đồng. Là một phần con người bạn.</p>
+          <p class="text-kytoo-cream leading-relaxed">KYTOO được tạo ra bởi fan — và luôn dành cho fan. Rõ ràng từng sản phẩm, tận tâm từng đơn hàng, minh bạch từng đồng. Không chém đẹp, không hàng qua tay, không đánh đổi chất lượng lấy lợi nhuận.</p>
+          <p class="text-kytoo-cream leading-relaxed">Đây là nơi bạn thuộc về — nếu bạn chơi thật, yêu thật. 🎯</p>
         </div>
-        <div class="flex flex-col gap-6 md:items-end">
-          <div>
-            <p class="text-kytoo-red font-display font-bold text-5xl tracking-widest">1.000+</p>
-            <p class="text-kytoo-gray text-sm uppercase tracking-widest mt-1">Đơn đã giao</p>
+        <div class="flex flex-col gap-8 items-center">
+          <!-- Shopee stats -->
+          <div class="flex flex-col gap-1">
+            <p class="text-kytoo-gray text-xs uppercase tracking-widest flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              Shopee
+            </p>
+            <div class="flex gap-8 md:justify-end">
+              <div>
+                <p class="text-kytoo-red font-display font-bold text-4xl tracking-widest">1,2K</p>
+                <p class="text-kytoo-gray text-xs uppercase tracking-widest mt-1">Followers</p>
+              </div>
+              <div>
+                <p class="text-kytoo-red font-display font-bold text-4xl tracking-widest">4.9★</p>
+                <p class="text-kytoo-gray text-xs uppercase tracking-widest mt-1">353 đánh giá</p>
+              </div>
+            </div>
           </div>
-          <div>
-            <p class="text-kytoo-red font-display font-bold text-5xl tracking-widest">4.8★</p>
-            <p class="text-kytoo-gray text-sm uppercase tracking-widest mt-1">Đánh giá trên Shopee</p>
+          <!-- TikTok stats -->
+          <div class="flex flex-col gap-1">
+            <p class="text-kytoo-gray text-xs uppercase tracking-widest flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.12 8.12 0 004.85 1.56V6.8a4.85 4.85 0 01-1.08-.11z"/></svg>
+              TikTok
+            </p>
+            <div class="flex gap-8 md:justify-end">
+              <div>
+                <p class="text-kytoo-red font-display font-bold text-4xl tracking-widest">11,3K</p>
+                <p class="text-kytoo-gray text-xs uppercase tracking-widest mt-1">Followers</p>
+              </div>
+              <div>
+                <p class="text-kytoo-red font-display font-bold text-4xl tracking-widest">310,6K</p>
+                <p class="text-kytoo-gray text-xs uppercase tracking-widest mt-1">Lượt thích</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -252,9 +398,9 @@
       <div class="flex items-end justify-between border-b border-kytoo-border pb-5 mb-8">
         <div class="flex items-center gap-4">
           <span class="w-1 h-10 bg-kytoo-red flex-shrink-0"></span>
-          <h2 class="text-4xl md:text-5xl font-display font-bold uppercase tracking-widest text-kytoo-cream leading-none">Liên Hệ</h2>
+          <h2 class="text-4xl md:text-5xl font-heading font-bold uppercase tracking-widest text-kytoo-cream leading-none">Liên Hệ</h2>
         </div>
-        <span class="text-kytoo-red font-display font-bold text-xl tracking-widest hidden md:block">04</span>
+        <span class="text-kytoo-red font-display font-bold text-xl tracking-widest hidden md:block kytoo-num">04</span>
       </div>
       <div class="flex flex-wrap gap-4 justify-center">
         <a href="https://zalo.me/0347470186" target="_blank" rel="noopener" class="group flex flex-col items-center gap-4 border border-kytoo-border bg-kytoo-bg-alt px-10 py-8 hover:bg-kytoo-red hover:border-kytoo-red transition-colors duration-200 min-w-[130px]">
@@ -347,84 +493,84 @@
         price: '150.000₫ – 279.000₫',
         imgs: ['images/mysterybox.jpg'],
         desc: 'Mở hộp bí ẩn để nhận bộ skin Valorant ngẫu nhiên — thêm phụ kiện giá đỡ và card đặc biệt tặng kèm.',
-        shopee: '#shopee-mysterybox'
+        shopee: 'https://vn.shp.ee/qGq2rsEw'
       },
       keycapcustom: {
         name: 'Keycaps Valorant 3D Hình Agent Cute Dành Cho Bàn Phím Cơ Tổng hợp Nhựa Tổng hợp',
         price: '279.000₫',
         imgs: ['images/keycapcustom.jpg'],
         desc: 'Keycap 3D in hình Agent Valorant nổi bật, chất liệu nhựa tổng hợp bền — nâng cấp bàn phím cơ của bạn ngay.',
-        shopee: '#shopee-keycapcustom'
+        shopee: 'https://vn.shp.ee/zyGrtYvW'
       },
       keycap14phim: {
         name: 'Bộ Keycap Valorant 14 Phím, Nhựa PBT Profile OEM Hình Agent Cute Dành Cho Game Thủ Không dây',
         price: '251.100₫ – 279.000₫',
         imgs: ['images/keycap14phim.jpg'],
         desc: 'Bộ 14 keycap PBT chuẩn OEM in hình Agent dễ thương — tương thích với hầu hết bàn phím cơ và không dây.',
-        shopee: '#shopee-keycap14phim'
+        shopee: 'https://vn.shp.ee/ybYx5k17'
       },
       tactical: {
         name: '[ẢNH THẬT] Mô Hình Tactical Bear, Phụ Kiện Flex Va lô Rần Dễ Thương Xả Stress',
         price: '279.000₫',
         imgs: ['images/tactical.jpg'],
         desc: 'Mô hình Tactical Bear chính xác từng chi tiết — flex bàn gaming, xả stress cực hiệu quả.',
-        shopee: '#shopee-tactical'
+        shopee: 'https://vt.tiktok.com/ZS9YjUWDNkcH7-E9gbu/'
       },
       wingman: {
         name: '[ẢNH THẬT] Mô Hình Wingman, Phụ Kiện Flex Va lô Rần Dễ Thương Xả Stress',
         price: '152.100₫',
         imgs: ['images/wingman.jpg'],
         desc: 'Người bạn đồng hành Wingman thu nhỏ — trang trí bàn làm việc và flex với đồng đội cùng chung server.',
-        shopee: '#shopee-wingman'
+        shopee: 'https://vt.tiktok.com/ZS9YjUtwNKdFv-Brthv/'
       },
       nhanclove: {
         name: 'Bộ 3 Nhẫn Clove Tuỳ Chỉnh Được Kích Thước, Trang Sức Valorant Đeo Tay, Độc Đáo Cho Duo Của Bạn',
         price: '79.000₫',
         imgs: ['images/nhanclove.jpg'],
         desc: 'Bộ 3 nhẫn lấy cảm hứng từ Agent Clove — size tùy chỉnh, lý tưởng cho cặp đôi game thủ.',
-        shopee: '#shopee-nhanclove'
+        shopee: 'https://vn.shp.ee/Z64uAvxY'
       },
       nuochoa: {
         name: 'Nước Hoa Va Lo Rừng Dung Tích 10ml Tăng Cá Tính Cùng Agent Của Bạn. Hương Hoa Cỏ Tự Nhiên, Lưu Hương Lâu',
         price: '69.000₫',
         imgs: ['images/nuochoa.jpg'],
         desc: 'Nước hoa mini 10ml hương thiên nhiên — mang cá tính Agent Valorant vào cuộc sống thực của bạn.',
-        shopee: '#shopee-nuochoa'
+        shopee: 'https://vn.shp.ee/KoiyftkU'
       },
       blindbox: {
         name: '[MUA MÓC KHOÁ TẶNG STICKER] - Túi mù Móc khoá Valorant Skin Dành Cho Game Thủ Valorant',
         price: '67.150₫',
         imgs: ['images/blindbox.jpg'],
         desc: 'Móc khoá skin Valorant bí ẩn — mỗi túi mù là một skin ngẫu nhiên, kèm sticker tặng kèm.',
-        shopee: '#shopee-blindbox'
+        shopee: 'https://vn.shp.ee/iKH2ySrM'
       },
       padchuot: {
         name: 'Tấm Lót Chuột Va-Lô-Rừng HandMade Cỡ Nhỏ 30x25cm Dành Cho Game Thủ Siêu Ngầu',
         price: '63.200₫ – 79.000₫',
         imgs: ['images/padchuot.jpg'],
         desc: 'Pad chuột handmade 30×25cm in hoa văn Valorant — bảo vệ mặt bàn và tăng độ chính xác khi aim.',
-        shopee: '#shopee-padchuot'
+        shopee: 'https://vn.shp.ee/wtaWgPFC'
       },
       miengketay: {
         name: 'Miếng Kê Tay Hình Thú Corgi Siêu Cute Giúp Bảo Vệ Cổ Tay Khi Sử Dụng Máy Tính',
         price: '55.200₫',
         imgs: ['images/miengketay.jpg'],
         desc: 'Kê tay hình Corgi dễ thương — giảm mỏi cổ tay sau những session gaming dài.',
-        shopee: '#shopee-miengketay'
+        shopee: 'https://vn.shp.ee/3XyaGrTo'
       },
       nhandaychuyen: {
         name: 'Nhẫn Sage Valorant, Đồ Trang Sức Valorant',
         price: '37.000₫ – 44.100₫',
         imgs: ['images/nhandaychuyen_1.png','images/nhandaychuyen_2.png','images/nhandaychuyen_3.png','images/nhandaychuyen_4.png'],
         desc: 'Nhẫn lấy cảm hứng từ Agent Sage — đơn giản, tinh tế, dành cho người yêu Valorant.',
-        shopee: '#shopee-nhandaychuyen'
+        shopee: 'https://vn.shp.ee/nHBmZdzA'
       },
       meotreomanhinh: {
         name: 'Mô Hình Mèo Trang Trí Màn Hình Máy Tính Và Bàn Làm Việc Dễ Thương',
         price: '35.000₫',
         imgs: ['images/meotreomanhinh.jpg'],
         desc: 'Mèo nhỏ treo mép màn hình — trang trí bàn làm việc thêm cute mà không tốn không gian.',
-        shopee: '#shopee-meotreomanhinh'
+        shopee: 'https://vn.shp.ee/WNdHWxex'
       }
     };
 
