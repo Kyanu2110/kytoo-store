@@ -17,11 +17,11 @@ See: .planning/PROJECT.md (updated 2026-05-22)
 |-------|------|--------|
 | 1 | Core Layout & Hero | Complete ✓ |
 | 2 | Products, About & Contact | Complete ✓ |
-| 3 | Deploy & Verify | Planned ✓ (1 plan) |
+| 3 | Deploy & Verify | Complete ✓ |
 
 ## Current Phase
 
-**Pre-Phase 3: Layout Polish** — Gaming effects + font refinement ◆ IN PROGRESS
+**Phase 3: Deploy & Verify** — Complete ✓ 2026-05-24
 
 ## Extra Work (ngoài plan — Phase 1 & 2)
 
@@ -53,11 +53,13 @@ See: .planning/PROJECT.md (updated 2026-05-22)
 
 ## Next Step
 
-```
-/gsd:execute-phase 3
-```
+**v1 Launch Complete** — Site live tại https://kytooshop.github.io/kytoo-store/
 
-Phase 3: Deploy & Verify — tạo .gitignore, push GitHub Pages, điền Shopee links thật, QA live
+Các hướng tiếp theo (v2):
+- Custom domain (kytoo.gg / kytoo.vn)
+- Google Analytics
+- SEO / Open Graph tags
+- Shopee links cho tactical + wingman khi có listing
 
 ## Notes
 
