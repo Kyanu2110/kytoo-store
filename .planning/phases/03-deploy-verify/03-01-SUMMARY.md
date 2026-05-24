@@ -15,8 +15,8 @@ KYTOO Store is now live at a public HTTPS URL with all Shopee product links fill
 
 ## Live URLs
 
-- **Site:** https://kytooshop.github.io/kytoo-store/
-- **GitHub repo:** https://github.com/kytooshop/kytoo-store
+- **Site:** https://kyanu2110.github.io/kytoo-store/
+- **GitHub repo:** https://github.com/Kyanu2110/kytoo-store
 - **Shopee shop:** https://shopee.vn/kytoo_store
 
 ## Shopee Links Filled In

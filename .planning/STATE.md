@@ -53,7 +53,7 @@ See: .planning/PROJECT.md (updated 2026-05-22)
 
 ## Next Step
 
-**v1 Launch Complete** — Site live tại https://kytooshop.github.io/kytoo-store/
+**v1 Launch Complete** — Site live tại https://kyanu2110.github.io/kytoo-store/
 
 Các hướng tiếp theo (v2):
 - Custom domain (kytoo.gg / kytoo.vn)
